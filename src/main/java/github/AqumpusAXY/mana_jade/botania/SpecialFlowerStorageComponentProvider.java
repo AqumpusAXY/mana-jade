@@ -1,0 +1,39 @@
+package github.AqumpusAXY.mana_jade.botania;
+
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
+import net.minecraft.resources.ResourceLocation;
+import snownee.jade.api.*;
+import snownee.jade.api.config.IPluginConfig;
+import vazkii.botania.api.block_entity.BindableSpecialFlowerBlockEntity;
+
+public enum SpecialFlowerStorageComponentProvider implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
+    INSTANCE;
+
+    @Override
+    public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
+        if (accessor.getServerData().contains("MaxMana") && accessor.getServerData().contains("CurrentMana")) {
+            tooltip.add(Component.translatable("tooltip.mana_jade.botania_mana_receiver_storage",
+                    accessor.getServerData().getInt("CurrentMana"), accessor.getServerData().getInt("MaxMana"))
+                    .withStyle(Style.EMPTY.withColor(0x05D5FF)));
+        }
+    }
+
+    @Override
+    public void appendServerData(CompoundTag data, BlockAccessor accessor) {
+        BindableSpecialFlowerBlockEntity<?> blockEntity = (BindableSpecialFlowerBlockEntity<?>) accessor.getBlockEntity();
+        data.putInt("MaxMana", blockEntity.getMaxMana());
+        data.putInt("CurrentMana", blockEntity.getMana());
+    }
+
+    @Override
+    public ResourceLocation getUid() {
+        return BotaniaPlugin.BOTANIA_SPECIAL_FLOWER_STORAGE;
+    }
+
+    @Override
+    public int getDefaultPriority() {
+        return TooltipPosition.TAIL - 2;
+    }
+}
