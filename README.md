@@ -1,4 +1,4 @@
-#　Mana Jade
+# Mana Jade
 
 ---
 
@@ -32,7 +32,7 @@ Made by **AqumpusAXY**
 
 <br><br>
 
-#　Mana Jade
+# Mana Jade
 
 ---
 
