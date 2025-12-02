@@ -9,7 +9,7 @@
   "tooltip.mana_jade.false": "否",
   "tooltip.mana_jade.botania_mana_spreader_should_shoot_burst": "是否可以发射魔力: %s",
   "tooltip.mana_jade.botania_mana_spreader_burst_starting_mana": "脉冲初始魔力: %d",
-  "tooltip.mana_jade.botania_mana_spreader_burst_velocity": "脉冲速度: %.2f, %.2f, %.2f",
+  "tooltip.mana_jade.botania_mana_spreader_burst_velocity": "脉冲速度: %s, %s, %s",
   "tooltip.mana_jade.botania_mana_spreader_burst_ticks_before_mana_loss": "脉冲魔力开始流失前游戏刻: %d",
   "tooltip.mana_jade.botania_mana_spreader_burst_mana_loss": "脉冲每游戏刻流失魔力: %d"
 }

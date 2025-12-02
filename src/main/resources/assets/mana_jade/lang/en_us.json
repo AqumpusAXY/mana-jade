@@ -9,7 +9,7 @@
   "tooltip.mana_jade.false": "false",
   "tooltip.mana_jade.botania_mana_spreader_should_shoot_burst": "Should shoot burst: %s",
   "tooltip.mana_jade.botania_mana_spreader_burst_starting_mana": "Burst Starting Mana: %d",
-  "tooltip.mana_jade.botania_mana_spreader_burst_velocity": "Burst Velocity: %.2f, %.2f, %.2f",
+  "tooltip.mana_jade.botania_mana_spreader_burst_velocity": "Burst Velocity: %s, %s, %s",
   "tooltip.mana_jade.botania_mana_spreader_burst_ticks_before_mana_loss": "Burst Ticks Before Mana Loss: %d",
   "tooltip.mana_jade.botania_mana_spreader_burst_mana_loss": "Burst Mana Loss Per Tick: %d"
 }
