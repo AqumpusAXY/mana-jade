@@ -25,3 +25,6 @@ replay-recordings/
 *.bak
 *.swp
 *~
+
+### Test pack ###
+src/main/java/github/AqumpusAXY/mana_jade/test/
