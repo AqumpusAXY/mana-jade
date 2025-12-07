@@ -2,17 +2,14 @@ package github.AqumpusAXY.mana_jade.util;
 
 import github.AqumpusAXY.mana_jade.ui.ManaElement;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.material.WaterFluid;
-import snownee.jade.api.fluid.JadeFluidObject;
 import snownee.jade.api.ui.BoxStyle;
 import snownee.jade.api.ui.IElement;
-import snownee.jade.impl.ui.FluidStackElement;
 import snownee.jade.impl.ui.ProgressElement;
 import snownee.jade.impl.ui.ProgressStyle;
+import snownee.jade.impl.ui.SlimProgressStyle;
 
 public class ElementProvider {
-    public static IElement ManaProgressElement(int mana, int maxMana) {
+    public static IElement manaProgressElement(int mana, int maxMana) {
         float progress = (float) mana / maxMana;
 
         Component progressText = Component.translatable("tooltip.mana_jade.botania_mana_receiver_storage", mana, maxMana);
@@ -31,7 +28,7 @@ public class ElementProvider {
         return new ProgressElement(progress, progressText, style, boxStyle, true);
     }
 
-    public static IElement InfiniteManaProgressElement() {
+    public static IElement infiniteManaProgressElement() {
         float progress = 1;
 
         Component progressText = Component.translatable("tooltip.mana_jade.botania_creative_mana_pool_storage");

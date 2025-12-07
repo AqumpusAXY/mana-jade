@@ -11,6 +11,7 @@ import vazkii.botania.api.block_entity.BindableSpecialFlowerBlockEntity;
 import vazkii.botania.common.block.FloatingSpecialFlowerBlock;
 import vazkii.botania.common.block.block_entity.mana.ManaPoolBlockEntity;
 import vazkii.botania.common.block.block_entity.mana.ManaSpreaderBlockEntity;
+import vazkii.botania.common.block.flower.PureDaisyBlockEntity;
 import vazkii.botania.common.block.mana.ManaPoolBlock;
 import vazkii.botania.common.block.mana.ManaSpreaderBlock;
 
@@ -24,6 +25,8 @@ public class BotaniaPlugin implements IWailaPlugin {
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "botania_mana_spreader_burst_info");
     public static final ResourceLocation BOTANIA_SPECIAL_FLOWER_STORAGE =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "botania_special_flower_storage");
+    public static final ResourceLocation BOTANIA_PURE_DAISY_RECIPE_PROGRESS =
+            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "botania_pure_daisy_recipe_progress");
 
 
     @Override
@@ -32,6 +35,7 @@ public class BotaniaPlugin implements IWailaPlugin {
         registration.registerBlockDataProvider(ManaSpreaderComponentProvider.INSTANCE, ManaSpreaderBlockEntity.class);
         registration.registerBlockDataProvider(ManaSpreaderBurstComponentProvider.INSTANCE, ManaSpreaderBlockEntity.class);
         registration.registerBlockDataProvider(SpecialFlowerStorageComponentProvider.INSTANCE, BindableSpecialFlowerBlockEntity.class);
+        registration.registerBlockDataProvider(PureDaisyComponentProvider.INSTANCE, PureDaisyBlockEntity.class);
     }
 
     @Override
@@ -41,5 +45,7 @@ public class BotaniaPlugin implements IWailaPlugin {
         registration.registerBlockComponent(ManaSpreaderBurstComponentProvider.INSTANCE, ManaSpreaderBlock.class);
         registration.registerBlockComponent(SpecialFlowerStorageComponentProvider.INSTANCE, FlowerBlock.class);
         registration.registerBlockComponent(SpecialFlowerStorageComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
+        registration.registerBlockComponent(PureDaisyComponentProvider.INSTANCE, FlowerBlock.class);
+        registration.registerBlockComponent(PureDaisyComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
     }
 }

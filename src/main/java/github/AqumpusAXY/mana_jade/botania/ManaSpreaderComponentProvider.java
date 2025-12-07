@@ -15,7 +15,7 @@ public enum ManaSpreaderComponentProvider implements IBlockComponentProvider, IS
         if (accessor.getServerData().contains("MaxMana") && accessor.getServerData().contains("CurrentMana")) {
             int mana = accessor.getServerData().getInt("CurrentMana");
             int maxMana = accessor.getServerData().getInt("MaxMana");
-            tooltip.add(ElementProvider.ManaProgressElement(mana, maxMana));
+            tooltip.add(ElementProvider.manaProgressElement(mana, maxMana));
         }
     }
 

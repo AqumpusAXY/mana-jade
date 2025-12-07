@@ -17,9 +17,9 @@ public enum ManaPoolComponentProvider implements IBlockComponentProvider, IServe
             if (accessor.getBlock() != BotaniaBlocks.creativePool) {
                 int mana = accessor.getServerData().getInt("CurrentMana");
                 int maxMana = accessor.getServerData().getInt("MaxMana");
-                tooltip.add(ElementProvider.ManaProgressElement(mana, maxMana));
+                tooltip.add(ElementProvider.manaProgressElement(mana, maxMana));
             } else {
-                tooltip.add(ElementProvider.InfiniteManaProgressElement());
+                tooltip.add(ElementProvider.infiniteManaProgressElement());
             }
         }
     }

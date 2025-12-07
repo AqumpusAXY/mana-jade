@@ -5,7 +5,9 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "mana_jade.refmap.json",
   "mixins": [
-    "botania.ManaSpreaderGetBurstInvoker"
+    "botania.ManaSpreaderGetBurstInvoker",
+    "botania.PureDaisyBlockEntityMixin",
+    "botania.PureDaisyTicksRemainingAccessor"
   ],
   "client": [
   ],
