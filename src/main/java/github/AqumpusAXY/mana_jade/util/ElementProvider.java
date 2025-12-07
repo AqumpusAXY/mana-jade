@@ -1,8 +1,13 @@
 package github.AqumpusAXY.mana_jade.util;
 
+import github.AqumpusAXY.mana_jade.ui.ManaElement;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.material.WaterFluid;
+import snownee.jade.api.fluid.JadeFluidObject;
 import snownee.jade.api.ui.BoxStyle;
 import snownee.jade.api.ui.IElement;
+import snownee.jade.impl.ui.FluidStackElement;
 import snownee.jade.impl.ui.ProgressElement;
 import snownee.jade.impl.ui.ProgressStyle;
 
@@ -17,6 +22,8 @@ public class ElementProvider {
         style.autoTextColor = false;
         style.textColor(0xFFFFFFFF);
         style.color(0xFF05D5FF);
+
+        style.overlay(new ManaElement());
 
         BoxStyle boxStyle = BoxStyle.DEFAULT;
         boxStyle.borderColor = 0xFF000000;
@@ -34,6 +41,8 @@ public class ElementProvider {
         style.autoTextColor = false;
         style.textColor(0xFFFFFFFF);
         style.color(0xFF05D5FF);
+
+        style.overlay(new ManaElement());
 
         BoxStyle boxStyle = BoxStyle.DEFAULT;
         boxStyle.borderColor = 0xFF000000;
