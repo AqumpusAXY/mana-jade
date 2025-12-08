@@ -22,9 +22,14 @@ public enum PureDaisyComponentProvider implements IBlockComponentProvider, IServ
             int[] timeRequired = accessor.getServerData().getIntArray("TimeRequired");
             int[] timeRemaining = accessor.getServerData().getIntArray("TimeRemaining");
             for (int i = 0; i < timeRemaining.length; i++) {
-                tooltip.add(Component.translatable("tooltip.mana_jade.botania_pure_daisy_recipe_progress",
-                        Component.translatable(getDirectionName(i)),
-                        timeToSeconds(timeRemaining[i]), timeToSeconds(timeRequired[i])));
+                if (timeRemaining[i] < 0) {
+                    tooltip.add(Component.translatable("tooltip.mana_jade.botania_pure_daisy_no_recipe",
+                            Component.translatable(getDirectionName(i))));
+                } else {
+                    tooltip.add(Component.translatable("tooltip.mana_jade.botania_pure_daisy_recipe_progress",
+                            Component.translatable(getDirectionName(i)), timeToSeconds(timeRemaining[i]),
+                            timeToSeconds(timeRequired[i])));
+                }
             }
         }
     }

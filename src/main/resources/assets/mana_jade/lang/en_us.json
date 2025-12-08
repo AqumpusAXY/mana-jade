@@ -21,5 +21,6 @@
   "tooltip.mana_jade.botania_mana_spreader_burst_velocity": "Burst Velocity: %s, %s, %s",
   "tooltip.mana_jade.botania_mana_spreader_burst_ticks_before_mana_loss": "Burst Ticks Before Mana Loss: %d",
   "tooltip.mana_jade.botania_mana_spreader_burst_mana_loss": "Burst Mana Loss Per Tick: %d",
-  "tooltip.mana_jade.botania_pure_daisy_recipe_progress": "%s Progress: %d/%d s"
+  "tooltip.mana_jade.botania_pure_daisy_recipe_progress": "%s Progress: %d/%d s",
+  "tooltip.mana_jade.botania_pure_daisy_no_recipe": "%s: No Recipe"
 }
