@@ -18,7 +18,6 @@ public enum PureDaisyComponentProvider implements IBlockComponentProvider, IServ
     @Override
     public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
         if (accessor.getServerData().contains("TimeRemaining")) {
-            //TODO: 在timeRemaining小于0时, 显示无配方
             int[] timeRequired = accessor.getServerData().getIntArray("TimeRequired");
             int[] timeRemaining = accessor.getServerData().getIntArray("TimeRemaining");
             for (int i = 0; i < timeRemaining.length; i++) {
