@@ -1,5 +1,6 @@
-package github.aqumpusaxy.mana_jade.botania;
+package github.aqumpusaxy.mana_jade.plugin.mana_storage;
 
+import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import github.aqumpusaxy.mana_jade.util.ElementProvider;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;

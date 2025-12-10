@@ -1,4 +1,4 @@
-package github.aqumpusaxy.mana_jade.mixin.botania;
+package github.aqumpusaxy.mana_jade.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;

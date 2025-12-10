@@ -1,13 +1,14 @@
-package github.aqumpusaxy.mana_jade.botania;
+package github.aqumpusaxy.mana_jade.plugin.mana_storage;
 
+import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import github.aqumpusaxy.mana_jade.util.ElementProvider;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import snownee.jade.api.*;
 import snownee.jade.api.config.IPluginConfig;
-import vazkii.botania.common.block.block_entity.mana.ManaSpreaderBlockEntity;
+import vazkii.botania.api.block_entity.BindableSpecialFlowerBlockEntity;
 
-public enum ManaSpreaderComponentProvider implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
+public enum SpecialFlowerComponentProvider implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
     INSTANCE;
 
     @Override
@@ -21,14 +22,14 @@ public enum ManaSpreaderComponentProvider implements IBlockComponentProvider, IS
 
     @Override
     public void appendServerData(CompoundTag data, BlockAccessor accessor) {
-        ManaSpreaderBlockEntity blockEntity = (ManaSpreaderBlockEntity) accessor.getBlockEntity();
+        BindableSpecialFlowerBlockEntity<?> blockEntity = (BindableSpecialFlowerBlockEntity<?>) accessor.getBlockEntity();
         data.putInt("MaxMana", blockEntity.getMaxMana());
-        data.putInt("CurrentMana", blockEntity.getCurrentMana());
+        data.putInt("CurrentMana", blockEntity.getMana());
     }
 
     @Override
     public ResourceLocation getUid() {
-        return BotaniaPlugin.BOTANIA_MANA_SPREADER_STORAGE;
+        return BotaniaPlugin.BOTANIA_SPECIAL_FLOWER_STORAGE;
     }
 
     @Override

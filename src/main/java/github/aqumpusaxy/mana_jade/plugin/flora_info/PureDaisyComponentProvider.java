@@ -1,7 +1,8 @@
-package github.aqumpusaxy.mana_jade.botania;
+package github.aqumpusaxy.mana_jade.plugin.flora_info;
 
 import github.aqumpusaxy.mana_jade.accessor.PureDaisyTicksRequiredAccessor;
-import github.aqumpusaxy.mana_jade.mixin.botania.PureDaisyTicksRemainingAccessor;
+import github.aqumpusaxy.mana_jade.mixin.PureDaisyTicksRemainingAccessor;
+import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;

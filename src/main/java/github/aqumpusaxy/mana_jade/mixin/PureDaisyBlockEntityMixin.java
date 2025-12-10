@@ -1,4 +1,4 @@
-package github.aqumpusaxy.mana_jade.mixin.botania;
+package github.aqumpusaxy.mana_jade.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import github.aqumpusaxy.mana_jade.accessor.PureDaisyTicksRequiredAccessor;

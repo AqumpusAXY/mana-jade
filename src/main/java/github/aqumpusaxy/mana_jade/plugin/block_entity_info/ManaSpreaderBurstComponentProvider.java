@@ -1,6 +1,7 @@
-package github.aqumpusaxy.mana_jade.botania;
+package github.aqumpusaxy.mana_jade.plugin.block_entity_info;
 
-import github.aqumpusaxy.mana_jade.mixin.botania.ManaSpreaderGetBurstInvoker;
+import github.aqumpusaxy.mana_jade.mixin.ManaSpreaderGetBurstInvoker;
+import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import github.aqumpusaxy.mana_jade.util.CustomDecimalFormat;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
