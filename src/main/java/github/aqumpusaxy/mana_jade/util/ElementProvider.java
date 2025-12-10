@@ -11,7 +11,7 @@ public class ElementProvider {
     public static IElement manaProgressElement(int mana, int maxMana) {
         float progress = (float) mana / maxMana;
 
-        Component progressText = Component.translatable("tooltip.mana_jade.botania_mana_receiver_storage", mana, maxMana);
+        Component progressText = Component.translatable("tooltip.mana_jade.mana_receiver_storage", mana, maxMana);
 
         ProgressStyle style = new ProgressStyle();
         style.shadow = false;
@@ -30,7 +30,7 @@ public class ElementProvider {
     public static IElement infiniteManaProgressElement() {
         float progress = 1;
 
-        Component progressText = Component.translatable("tooltip.mana_jade.botania_creative_mana_pool_storage");
+        Component progressText = Component.translatable("tooltip.mana_jade.creative_mana_pool_storage");
 
         ProgressStyle style = new ProgressStyle();
         style.shadow = false;

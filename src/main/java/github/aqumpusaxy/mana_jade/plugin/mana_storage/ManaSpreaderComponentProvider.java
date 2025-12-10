@@ -29,7 +29,7 @@ public enum ManaSpreaderComponentProvider implements IBlockComponentProvider, IS
 
     @Override
     public ResourceLocation getUid() {
-        return BotaniaPlugin.BOTANIA_MANA_SPREADER_STORAGE;
+        return BotaniaPlugin.MANA_SPREADER_STORAGE;
     }
 
     @Override

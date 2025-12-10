@@ -25,10 +25,10 @@ public enum PureDaisyComponentProvider implements IBlockComponentProvider, IServ
             boolean isBoosted = isBoosted((SpecialFlowerBlockEntity) accessor.getBlockEntity());
             for (int i = 0; i < timeRemaining.length; i++) {
                 if (timeRemaining[i] < 0) {
-                    tooltip.add(Component.translatable("tooltip.mana_jade.botania_pure_daisy_no_recipe",
+                    tooltip.add(Component.translatable("tooltip.mana_jade.pure_daisy_no_recipe",
                             Component.translatable(getDirectionName(i))));
                 } else {
-                    tooltip.add(Component.translatable("tooltip.mana_jade.botania_pure_daisy_recipe_progress",
+                    tooltip.add(Component.translatable("tooltip.mana_jade.pure_daisy_recipe_progress",
                             Component.translatable(getDirectionName(i)), timeToSeconds(timeRemaining[i], isBoosted),
                             timeToSeconds(timeRequired[i], isBoosted)));
                 }
@@ -47,7 +47,7 @@ public enum PureDaisyComponentProvider implements IBlockComponentProvider, IServ
 
     @Override
     public ResourceLocation getUid() {
-        return BotaniaPlugin.BOTANIA_PURE_DAISY_RECIPE_PROGRESS;
+        return BotaniaPlugin.PURE_DAISY_RECIPE_PROGRESS;
     }
 
     private static String getDirectionName(int i) {

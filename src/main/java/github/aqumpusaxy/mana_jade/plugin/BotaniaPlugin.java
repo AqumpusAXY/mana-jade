@@ -23,19 +23,19 @@ import vazkii.botania.common.block.mana.ManaSpreaderBlock;
 
 @WailaPlugin
 public class BotaniaPlugin implements IWailaPlugin {
-    public static final ResourceLocation BOTANIA_MANA_POOL_STORAGE =
+    public static final ResourceLocation MANA_POOL_STORAGE =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "botania_mana_pool_storage");
-    public static final ResourceLocation BOTANIA_MANA_SPREADER_STORAGE =
+    public static final ResourceLocation MANA_SPREADER_STORAGE =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "botania_mana_spreader_storage");
-    public static final ResourceLocation BOTANIA_SPECIAL_FLOWER_STORAGE =
+    public static final ResourceLocation SPECIAL_FLOWER_STORAGE =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "botania_special_flower_storage");
 
-    public static final ResourceLocation BOTANIA_MANA_POOL_CATALYST =
+    public static final ResourceLocation MANA_POOL_CATALYST =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "botania_mana_pool_catalyst");
-    public static final ResourceLocation BOTANIA_MANA_SPREADER_BURST_INFO =
+    public static final ResourceLocation MANA_SPREADER_BURST_INFO =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "botania_mana_spreader_burst_info");
 
-    public static final ResourceLocation BOTANIA_PURE_DAISY_RECIPE_PROGRESS =
+    public static final ResourceLocation PURE_DAISY_RECIPE_PROGRESS =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "botania_pure_daisy_recipe_progress");
 
 

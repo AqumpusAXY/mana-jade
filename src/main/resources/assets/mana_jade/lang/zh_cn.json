@@ -1,15 +1,14 @@
 {
-  "config.jade.plugin_mana_jade.botania_mana_pool_storage": "魔力池魔力存储",
-  "config.jade.plugin_mana_jade.botania_mana_spreader_storage": "魔力发射器魔力存储",
-  "config.jade.plugin_mana_jade.botania_mana_spreader_burst_info": "魔力发射器信息",
-  "config.jade.plugin_mana_jade.botania_special_flower_storage": "花魔力存储",
-  "tooltip.mana_jade.botania_mana_receiver_storage": "魔力: %d/%d",
-  "tooltip.mana_jade.botania_creative_mana_pool_storage": "魔力: ∞",
+  "config.jade.plugin_mana_jade.mana_pool_storage": "魔力池魔力存储",
+  "config.jade.plugin_mana_jade.mana_spreader_storage": "魔力发射器魔力存储",
+  "config.jade.plugin_mana_jade.mana_spreader_burst_info": "魔力发射器信息",
+  "config.jade.plugin_mana_jade.special_flower_storage": "花魔力存储",
+  "tooltip.mana_jade.mana_receiver_storage": "魔力: %d/%d",
+  "tooltip.mana_jade.creative_mana_pool_storage": "魔力: ∞",
   "tooltip.mana_jade.true": "是",
   "tooltip.mana_jade.false": "否",
-  "tooltip.mana_jade.botania_mana_spreader_should_shoot_burst": "是否可以发射魔力: %s",
-  "tooltip.mana_jade.botania_mana_spreader_burst_starting_mana": "脉冲初始魔力: %d",
-  "tooltip.mana_jade.botania_mana_spreader_burst_velocity": "脉冲速度: %s, %s, %s",
-  "tooltip.mana_jade.botania_mana_spreader_burst_ticks_before_mana_loss": "脉冲魔力开始流失前游戏刻: %d",
-  "tooltip.mana_jade.botania_mana_spreader_burst_mana_loss": "脉冲每游戏刻流失魔力: %d"
+  "tooltip.mana_jade.mana_spreader_burst_starting_mana": "脉冲初始魔力: %d",
+  "tooltip.mana_jade.mana_spreader_burst_velocity": "脉冲速度: %s, %s, %s",
+  "tooltip.mana_jade.mana_spreader_burst_ticks_before_mana_loss": "脉冲魔力开始流失前游戏刻: %d",
+  "tooltip.mana_jade.mana_spreader_burst_mana_loss": "脉冲每游戏刻流失魔力: %d"
 }

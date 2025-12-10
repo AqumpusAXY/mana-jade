@@ -20,12 +20,12 @@ public enum ManaPoolCatalystComponentProvider implements IBlockComponentProvider
 
         var block = level.getBlockState(accessor.getPosition().below()).getBlock();
         if (ManaPoolCatalystManager.catalysts.contains(block)) {
-            tooltip.add(Component.translatable("tooltip.mana_jade.botania_mana_pool_catalyst", block.getName()));
+            tooltip.add(Component.translatable("tooltip.mana_jade.mana_pool_catalyst", block.getName()));
         }
     }
 
     @Override
     public ResourceLocation getUid() {
-        return BotaniaPlugin.BOTANIA_MANA_POOL_CATALYST;
+        return BotaniaPlugin.MANA_POOL_CATALYST;
     }
 }

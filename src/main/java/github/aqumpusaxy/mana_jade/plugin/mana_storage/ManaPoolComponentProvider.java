@@ -34,7 +34,7 @@ public enum ManaPoolComponentProvider implements IBlockComponentProvider, IServe
 
     @Override
     public ResourceLocation getUid() {
-        return BotaniaPlugin.BOTANIA_MANA_POOL_STORAGE;
+        return BotaniaPlugin.MANA_POOL_STORAGE;
     }
 
     @Override

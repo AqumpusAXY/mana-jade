@@ -29,7 +29,7 @@ public enum SpecialFlowerComponentProvider implements IBlockComponentProvider, I
 
     @Override
     public ResourceLocation getUid() {
-        return BotaniaPlugin.BOTANIA_SPECIAL_FLOWER_STORAGE;
+        return BotaniaPlugin.SPECIAL_FLOWER_STORAGE;
     }
 
     @Override

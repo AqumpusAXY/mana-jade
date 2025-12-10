@@ -21,21 +21,21 @@ public enum ManaSpreaderBurstComponentProvider implements IBlockComponentProvide
     @Override
     public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
         if (accessor.getServerData().contains("BurstStartingMana")) {
-            tooltip.add(Component.translatable("tooltip.mana_jade.botania_mana_spreader_burst_starting_mana",
+            tooltip.add(Component.translatable("tooltip.mana_jade.mana_spreader_burst_starting_mana",
                     accessor.getServerData().getInt("BurstStartingMana")
             ));
 
-            tooltip.add(Component.translatable("tooltip.mana_jade.botania_mana_spreader_burst_velocity",
+            tooltip.add(Component.translatable("tooltip.mana_jade.mana_spreader_burst_velocity",
                     CustomDecimalFormat.TWO_DECIMAL_FORMAT.format(accessor.getServerData().getDouble("BurstVelocityX")),
                     CustomDecimalFormat.TWO_DECIMAL_FORMAT.format(accessor.getServerData().getDouble("BurstVelocityY")),
                     CustomDecimalFormat.TWO_DECIMAL_FORMAT.format(accessor.getServerData().getDouble("BurstVelocityZ"))
             ));
 
-            tooltip.add(Component.translatable("tooltip.mana_jade.botania_mana_spreader_burst_ticks_before_mana_loss",
+            tooltip.add(Component.translatable("tooltip.mana_jade.mana_spreader_burst_ticks_before_mana_loss",
                     accessor.getServerData().getInt("BurstTicksBeforeManaLoss")
             ));
 
-            tooltip.add(Component.translatable("tooltip.mana_jade.botania_mana_spreader_burst_mana_loss",
+            tooltip.add(Component.translatable("tooltip.mana_jade.mana_spreader_burst_mana_loss",
                     accessor.getServerData().getFloat("BurstManaLossPerTick")
             ));
         }
@@ -59,6 +59,6 @@ public enum ManaSpreaderBurstComponentProvider implements IBlockComponentProvide
 
     @Override
     public ResourceLocation getUid() {
-        return BotaniaPlugin.BOTANIA_MANA_SPREADER_BURST_INFO;
+        return BotaniaPlugin.MANA_SPREADER_BURST_INFO;
     }
 }
