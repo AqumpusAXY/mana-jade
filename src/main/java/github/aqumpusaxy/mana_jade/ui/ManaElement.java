@@ -1,4 +1,4 @@
-package github.AqumpusAXY.mana_jade.ui;
+package github.aqumpusaxy.mana_jade.ui;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;

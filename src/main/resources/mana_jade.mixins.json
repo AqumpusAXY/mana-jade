@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "github.AqumpusAXY.mana_jade.mixin",
+  "package": "github.aqumpusaxy.mana_jade.mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "mana_jade.refmap.json",
   "mixins": [

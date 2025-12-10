@@ -1,7 +1,7 @@
-package github.AqumpusAXY.mana_jade.botania;
+package github.aqumpusaxy.mana_jade.botania;
 
-import github.AqumpusAXY.mana_jade.accessor.PureDaisyTicksRequiredAccessor;
-import github.AqumpusAXY.mana_jade.mixin.botania.PureDaisyTicksRemainingAccessor;
+import github.aqumpusaxy.mana_jade.accessor.PureDaisyTicksRequiredAccessor;
+import github.aqumpusaxy.mana_jade.mixin.botania.PureDaisyTicksRemainingAccessor;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;

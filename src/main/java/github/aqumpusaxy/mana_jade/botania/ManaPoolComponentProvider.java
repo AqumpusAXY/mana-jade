@@ -1,6 +1,6 @@
-package github.AqumpusAXY.mana_jade.botania;
+package github.aqumpusaxy.mana_jade.botania;
 
-import github.AqumpusAXY.mana_jade.util.ElementProvider;
+import github.aqumpusaxy.mana_jade.util.ElementProvider;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import snownee.jade.api.*;

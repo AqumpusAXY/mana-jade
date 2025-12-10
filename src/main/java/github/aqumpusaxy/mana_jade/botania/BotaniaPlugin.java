@@ -1,6 +1,6 @@
-package github.AqumpusAXY.mana_jade.botania;
+package github.aqumpusaxy.mana_jade.botania;
 
-import github.AqumpusAXY.mana_jade.ManaJade;
+import github.aqumpusaxy.mana_jade.ManaJade;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.FlowerBlock;
 import snownee.jade.api.IWailaClientRegistration;

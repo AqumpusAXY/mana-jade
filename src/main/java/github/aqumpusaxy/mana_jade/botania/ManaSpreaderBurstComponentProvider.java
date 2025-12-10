@@ -1,7 +1,7 @@
-package github.AqumpusAXY.mana_jade.botania;
+package github.aqumpusaxy.mana_jade.botania;
 
-import github.AqumpusAXY.mana_jade.mixin.botania.ManaSpreaderGetBurstInvoker;
-import github.AqumpusAXY.mana_jade.util.CustomDecimalFormat;
+import github.aqumpusaxy.mana_jade.mixin.botania.ManaSpreaderGetBurstInvoker;
+import github.aqumpusaxy.mana_jade.util.CustomDecimalFormat;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;

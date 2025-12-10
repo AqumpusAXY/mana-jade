@@ -1,12 +1,11 @@
-package github.AqumpusAXY.mana_jade.util;
+package github.aqumpusaxy.mana_jade.util;
 
-import github.AqumpusAXY.mana_jade.ui.ManaElement;
+import github.aqumpusaxy.mana_jade.ui.ManaElement;
 import net.minecraft.network.chat.Component;
 import snownee.jade.api.ui.BoxStyle;
 import snownee.jade.api.ui.IElement;
 import snownee.jade.impl.ui.ProgressElement;
 import snownee.jade.impl.ui.ProgressStyle;
-import snownee.jade.impl.ui.SlimProgressStyle;
 
 public class ElementProvider {
     public static IElement manaProgressElement(int mana, int maxMana) {

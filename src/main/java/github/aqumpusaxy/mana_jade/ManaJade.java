@@ -1,4 +1,4 @@
-package github.AqumpusAXY.mana_jade;
+package github.aqumpusaxy.mana_jade;
 
 import net.minecraftforge.fml.common.Mod;
 

@@ -1,7 +1,7 @@
-package github.AqumpusAXY.mana_jade.mixin.botania;
+package github.aqumpusaxy.mana_jade.mixin.botania;
 
 import com.llamalad7.mixinextras.sugar.Local;
-import github.AqumpusAXY.mana_jade.accessor.PureDaisyTicksRequiredAccessor;
+import github.aqumpusaxy.mana_jade.accessor.PureDaisyTicksRequiredAccessor;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

@@ -1,4 +1,4 @@
-package github.AqumpusAXY.mana_jade.util;
+package github.aqumpusaxy.mana_jade.util;
 
 import java.text.DecimalFormat;
 
