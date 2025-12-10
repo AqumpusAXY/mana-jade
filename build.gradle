@@ -180,6 +180,7 @@ dependencies {
 
     compileOnly fg.deobf("vazkii.botania:Botania:${botania_version}")
 
+    runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${pachouli_version}")
     runtimeOnly fg.deobf("vazkii.botania:Botania:${botania_version}")
