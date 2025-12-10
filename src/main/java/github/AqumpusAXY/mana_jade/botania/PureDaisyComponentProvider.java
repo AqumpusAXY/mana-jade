@@ -10,6 +10,7 @@ import snownee.jade.api.IBlockComponentProvider;
 import snownee.jade.api.IServerDataProvider;
 import snownee.jade.api.ITooltip;
 import snownee.jade.api.config.IPluginConfig;
+import vazkii.botania.api.block_entity.SpecialFlowerBlockEntity;
 import vazkii.botania.common.block.flower.PureDaisyBlockEntity;
 
 public enum PureDaisyComponentProvider implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
@@ -20,14 +21,15 @@ public enum PureDaisyComponentProvider implements IBlockComponentProvider, IServ
         if (accessor.getServerData().contains("TimeRemaining")) {
             int[] timeRequired = accessor.getServerData().getIntArray("TimeRequired");
             int[] timeRemaining = accessor.getServerData().getIntArray("TimeRemaining");
+            boolean isBoosted = isBoosted((SpecialFlowerBlockEntity) accessor.getBlockEntity());
             for (int i = 0; i < timeRemaining.length; i++) {
                 if (timeRemaining[i] < 0) {
                     tooltip.add(Component.translatable("tooltip.mana_jade.botania_pure_daisy_no_recipe",
                             Component.translatable(getDirectionName(i))));
                 } else {
                     tooltip.add(Component.translatable("tooltip.mana_jade.botania_pure_daisy_recipe_progress",
-                            Component.translatable(getDirectionName(i)), timeToSeconds(timeRemaining[i]),
-                            timeToSeconds(timeRequired[i])));
+                            Component.translatable(getDirectionName(i)), timeToSeconds(timeRemaining[i], isBoosted),
+                            timeToSeconds(timeRequired[i], isBoosted)));
                 }
             }
         }
@@ -61,7 +63,11 @@ public enum PureDaisyComponentProvider implements IBlockComponentProvider, IServ
         };
     }
 
-    private static float timeToSeconds(int time) {
-        return time * 8 / 20f;
+    private static float timeToSeconds(int time, boolean isBoosted) {
+        return time * 8 / 20f / (isBoosted ? 2 : 1);
+    }
+
+    private static boolean isBoosted(SpecialFlowerBlockEntity blockEntity) {
+        return blockEntity.isOnSpecialSoil() && blockEntity.isOvergrowthAffected();
     }
 }
