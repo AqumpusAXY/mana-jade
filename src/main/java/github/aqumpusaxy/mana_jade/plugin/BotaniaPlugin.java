@@ -24,19 +24,19 @@ import vazkii.botania.common.block.mana.ManaSpreaderBlock;
 @WailaPlugin
 public class BotaniaPlugin implements IWailaPlugin {
     public static final ResourceLocation MANA_POOL_STORAGE =
-            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "botania_mana_pool_storage");
+            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "mana_pool_storage");
     public static final ResourceLocation MANA_SPREADER_STORAGE =
-            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "botania_mana_spreader_storage");
+            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "mana_spreader_storage");
     public static final ResourceLocation SPECIAL_FLOWER_STORAGE =
-            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "botania_special_flower_storage");
+            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "special_flower_storage");
 
     public static final ResourceLocation MANA_POOL_CATALYST =
-            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "botania_mana_pool_catalyst");
+            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "mana_pool_catalyst");
     public static final ResourceLocation MANA_SPREADER_BURST_INFO =
-            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "botania_mana_spreader_burst_info");
+            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "mana_spreader_burst_info");
 
     public static final ResourceLocation PURE_DAISY_RECIPE_PROGRESS =
-            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "botania_pure_daisy_recipe_progress");
+            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "pure_daisy_recipe_progress");
 
 
     @Override
