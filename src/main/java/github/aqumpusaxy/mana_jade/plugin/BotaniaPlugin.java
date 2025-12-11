@@ -3,6 +3,7 @@ package github.aqumpusaxy.mana_jade.plugin;
 import github.aqumpusaxy.mana_jade.ManaJade;
 import github.aqumpusaxy.mana_jade.plugin.block_entity_info.ManaPoolCatalystComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.block_entity_info.ManaSpreaderBurstComponentProvider;
+import github.aqumpusaxy.mana_jade.plugin.block_entity_info.RunicAltarComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.flora_info.PureDaisyComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.mana_storage.ManaPoolComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.mana_storage.ManaSpreaderComponentProvider;
@@ -15,11 +16,13 @@ import snownee.jade.api.IWailaPlugin;
 import snownee.jade.api.WailaPlugin;
 import vazkii.botania.api.block_entity.BindableSpecialFlowerBlockEntity;
 import vazkii.botania.common.block.FloatingSpecialFlowerBlock;
+import vazkii.botania.common.block.block_entity.RunicAltarBlockEntity;
 import vazkii.botania.common.block.block_entity.mana.ManaPoolBlockEntity;
 import vazkii.botania.common.block.block_entity.mana.ManaSpreaderBlockEntity;
 import vazkii.botania.common.block.flower.PureDaisyBlockEntity;
 import vazkii.botania.common.block.mana.ManaPoolBlock;
 import vazkii.botania.common.block.mana.ManaSpreaderBlock;
+import vazkii.botania.common.block.mana.RunicAltarBlock;
 
 @WailaPlugin
 public class BotaniaPlugin implements IWailaPlugin {
@@ -34,6 +37,8 @@ public class BotaniaPlugin implements IWailaPlugin {
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "mana_pool_catalyst");
     public static final ResourceLocation MANA_SPREADER_BURST_INFO =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "mana_spreader_burst_info");
+    public static final ResourceLocation RUNIC_ALTAR_RECIPE_PROGRESS =
+            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "runic_altar_recipe_progress");
 
     public static final ResourceLocation PURE_DAISY_RECIPE_PROGRESS =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "pure_daisy_recipe_progress");
@@ -43,8 +48,11 @@ public class BotaniaPlugin implements IWailaPlugin {
     public void register(IWailaCommonRegistration registration) {
         registration.registerBlockDataProvider(ManaPoolComponentProvider.INSTANCE, ManaPoolBlockEntity.class);
         registration.registerBlockDataProvider(ManaSpreaderComponentProvider.INSTANCE, ManaSpreaderBlockEntity.class);
-        registration.registerBlockDataProvider(ManaSpreaderBurstComponentProvider.INSTANCE, ManaSpreaderBlockEntity.class);
         registration.registerBlockDataProvider(SpecialFlowerComponentProvider.INSTANCE, BindableSpecialFlowerBlockEntity.class);
+
+        registration.registerBlockDataProvider(ManaSpreaderBurstComponentProvider.INSTANCE, ManaSpreaderBlockEntity.class);
+        registration.registerBlockDataProvider(RunicAltarComponentProvider.INSTANCE, RunicAltarBlockEntity.class);
+
         registration.registerBlockDataProvider(PureDaisyComponentProvider.INSTANCE, PureDaisyBlockEntity.class);
     }
 
@@ -57,6 +65,7 @@ public class BotaniaPlugin implements IWailaPlugin {
 
         registration.registerBlockComponent(ManaPoolCatalystComponentProvider.INSTANCE, ManaPoolBlock.class);
         registration.registerBlockComponent(ManaSpreaderBurstComponentProvider.INSTANCE, ManaSpreaderBlock.class);
+        registration.registerBlockComponent(RunicAltarComponentProvider.INSTANCE, RunicAltarBlock.class);
 
         registration.registerBlockComponent(PureDaisyComponentProvider.INSTANCE, FlowerBlock.class);
         registration.registerBlockComponent(PureDaisyComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
