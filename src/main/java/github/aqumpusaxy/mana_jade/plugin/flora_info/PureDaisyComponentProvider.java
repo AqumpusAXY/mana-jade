@@ -1,6 +1,6 @@
 package github.aqumpusaxy.mana_jade.plugin.flora_info;
 
-import github.aqumpusaxy.mana_jade.accessor.PureDaisyTicksRequiredAccessor;
+import github.aqumpusaxy.mana_jade.invoker.PureDaisyTicksRequiredInvoker;
 import github.aqumpusaxy.mana_jade.mixin.PureDaisyTicksRemainingAccessor;
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import net.minecraft.nbt.CompoundTag;
@@ -24,10 +24,7 @@ public enum PureDaisyComponentProvider implements IBlockComponentProvider, IServ
             int[] timeRemaining = accessor.getServerData().getIntArray("TimeRemaining");
             boolean isBoosted = isBoosted((SpecialFlowerBlockEntity) accessor.getBlockEntity());
             for (int i = 0; i < timeRemaining.length; i++) {
-                if (timeRemaining[i] < 0) {
-                    tooltip.add(Component.translatable("tooltip.mana_jade.pure_daisy_no_recipe",
-                            Component.translatable(getDirectionName(i))));
-                } else {
+                if (timeRemaining[i] >= 0) {
                     tooltip.add(Component.translatable("tooltip.mana_jade.pure_daisy_recipe_progress",
                             Component.translatable(getDirectionName(i)), timeToSeconds(timeRemaining[i], isBoosted),
                             timeToSeconds(timeRequired[i], isBoosted)));
@@ -39,7 +36,7 @@ public enum PureDaisyComponentProvider implements IBlockComponentProvider, IServ
     @Override
     public void appendServerData(CompoundTag data, BlockAccessor accessor) {
         PureDaisyBlockEntity blockEntity = (PureDaisyBlockEntity) accessor.getBlockEntity();
-        int[] ticksRequired = ((PureDaisyTicksRequiredAccessor) blockEntity).mana_jade$getTicksRequired();
+        int[] ticksRequired = ((PureDaisyTicksRequiredInvoker) blockEntity).mana_jade$getTicksRequired();
         int[] ticksRemaining = ((PureDaisyTicksRemainingAccessor) blockEntity).getTicksRemaining();
         data.putIntArray("TimeRequired", ticksRequired);
         data.putIntArray("TimeRemaining", ticksRemaining);

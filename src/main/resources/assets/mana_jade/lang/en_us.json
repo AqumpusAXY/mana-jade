@@ -2,9 +2,11 @@
   "config.jade.plugin_mana_jade.mana_pool_storage": "Mana Pool Storage",
   "config.jade.plugin_mana_jade.mana_spreader_storage": "Mana Spreader Storage",
   "config.jade.plugin_mana_jade.special_flower_storage": "Flower Storage",
+
   "config.jade.plugin_mana_jade.mana_pool_catalyst": "Mana Pool Catalyst",
   "config.jade.plugin_mana_jade.mana_spreader_burst_info": "Mana Spreader Burst Info",
   "config.jade.plugin_mana_jade.runic_altar_recipe_progress": "Runic Altar Recipe Progress",
+  "config.jade.plugin_mana_jade.terra_plate_recipe_progress": "Terra Plate Recipe Progress",
 
   "config.jade.plugin_mana_jade.pure_daisy_recipe_progress": "Pure Daisy Recipe Progress",
 
@@ -16,7 +18,6 @@
   "tooltip.mana_jade.mana_spreader_burst_ticks_before_mana_loss": "Burst Ticks Before Mana Loss: %d",
   "tooltip.mana_jade.mana_spreader_burst_mana_loss": "Burst Mana Loss Per Tick: %d",
   "tooltip.mana_jade.pure_daisy_recipe_progress": "%s Progress: %d/%d s",
-  "tooltip.mana_jade.pure_daisy_no_recipe": "%s: No Recipe",
 
   "tooltip.mana_jade.true": "true",
   "tooltip.mana_jade.false": "false",

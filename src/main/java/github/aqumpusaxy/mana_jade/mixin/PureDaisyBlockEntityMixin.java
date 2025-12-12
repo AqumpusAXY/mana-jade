@@ -1,7 +1,7 @@
 package github.aqumpusaxy.mana_jade.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
-import github.aqumpusaxy.mana_jade.accessor.PureDaisyTicksRequiredAccessor;
+import github.aqumpusaxy.mana_jade.invoker.PureDaisyTicksRequiredInvoker;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -13,7 +13,7 @@ import vazkii.botania.api.recipe.PureDaisyRecipe;
 import vazkii.botania.common.block.flower.PureDaisyBlockEntity;
 
 @Mixin(value = PureDaisyBlockEntity.class, remap = false)
-public abstract class PureDaisyBlockEntityMixin implements PureDaisyTicksRequiredAccessor {
+public abstract class PureDaisyBlockEntityMixin implements PureDaisyTicksRequiredInvoker {
     @Shadow
     private int positionAt;
     @Shadow
