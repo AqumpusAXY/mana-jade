@@ -1,14 +1,32 @@
 {
   "config.jade.plugin_mana_jade.mana_pool_storage": "魔力池魔力存储",
   "config.jade.plugin_mana_jade.mana_spreader_storage": "魔力发射器魔力存储",
-  "config.jade.plugin_mana_jade.mana_spreader_burst_info": "魔力发射器信息",
   "config.jade.plugin_mana_jade.special_flower_storage": "花魔力存储",
+
+  "config.jade.plugin_mana_jade.mana_pool_catalyst": "魔力池催化器",
+  "config.jade.plugin_mana_jade.mana_spreader_burst_info": "魔力发射器脉冲信息",
+  "config.jade.plugin_mana_jade.runic_altar_recipe_progress": "符文祭坛配方进度",
+  "config.jade.plugin_mana_jade.terra_plate_recipe_progress": "泰拉凝聚板配方进度",
+
+  "config.jade.plugin_mana_jade.pure_daisy_recipe_progress": "白雏菊配方进度",
+
   "tooltip.mana_jade.mana_receiver_storage": "魔力: %d/%d",
   "tooltip.mana_jade.creative_mana_pool_storage": "魔力: ∞",
-  "tooltip.mana_jade.true": "是",
-  "tooltip.mana_jade.false": "否",
+  "tooltip.mana_jade.mana_pool_catalyst": "催化器: %s",
   "tooltip.mana_jade.mana_spreader_burst_starting_mana": "脉冲初始魔力: %d",
   "tooltip.mana_jade.mana_spreader_burst_velocity": "脉冲速度: %s, %s, %s",
   "tooltip.mana_jade.mana_spreader_burst_ticks_before_mana_loss": "脉冲魔力开始流失前游戏刻: %d",
-  "tooltip.mana_jade.mana_spreader_burst_mana_loss": "脉冲每游戏刻流失魔力: %d"
+  "tooltip.mana_jade.mana_spreader_burst_mana_loss": "脉冲每游戏刻流失魔力: %d",
+  "tooltip.mana_jade.pure_daisy_recipe_progress": "%s配方进度: %d/%d s",
+
+  "tooltip.mana_jade.true": "是",
+  "tooltip.mana_jade.false": "否",
+  "tooltip.mana_jade.direction.west": "西方",
+  "tooltip.mana_jade.direction.southwest": "西南方",
+  "tooltip.mana_jade.direction.south": "南方",
+  "tooltip.mana_jade.direction.southeast": "东南方",
+  "tooltip.mana_jade.direction.east": "东方",
+  "tooltip.mana_jade.direction.northeast": "东北方",
+  "tooltip.mana_jade.direction.north": "北方",
+  "tooltip.mana_jade.direction.northwest": "西北方"
 }
