@@ -4,10 +4,7 @@ import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import github.aqumpusaxy.mana_jade.util.ElementProvider;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
-import snownee.jade.api.BlockAccessor;
-import snownee.jade.api.IBlockComponentProvider;
-import snownee.jade.api.IServerDataProvider;
-import snownee.jade.api.ITooltip;
+import snownee.jade.api.*;
 import snownee.jade.api.config.IPluginConfig;
 import vazkii.botania.common.block.block_entity.RunicAltarBlockEntity;
 
@@ -33,5 +30,10 @@ public enum RunicAltarComponentProvider implements IBlockComponentProvider, ISer
     @Override
     public ResourceLocation getUid() {
         return BotaniaPlugin.RUNIC_ALTAR_RECIPE_PROGRESS;
+    }
+
+    @Override
+    public int getDefaultPriority() {
+        return TooltipPosition.TAIL - 2;
     }
 }
