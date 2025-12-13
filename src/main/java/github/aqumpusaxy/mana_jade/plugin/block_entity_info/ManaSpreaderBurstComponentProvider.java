@@ -2,7 +2,7 @@ package github.aqumpusaxy.mana_jade.plugin.block_entity_info;
 
 import github.aqumpusaxy.mana_jade.mixin.ManaSpreaderGetBurstInvoker;
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
-import github.aqumpusaxy.mana_jade.util.CustomDecimalFormat;
+import github.aqumpusaxy.mana_jade.util.DecimalFormatUtil;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -26,9 +26,9 @@ public enum ManaSpreaderBurstComponentProvider implements IBlockComponentProvide
             ));
 
             tooltip.add(Component.translatable("tooltip.mana_jade.mana_spreader_burst_velocity",
-                    CustomDecimalFormat.TWO_DECIMAL_FORMAT.format(accessor.getServerData().getDouble("BurstVelocityX")),
-                    CustomDecimalFormat.TWO_DECIMAL_FORMAT.format(accessor.getServerData().getDouble("BurstVelocityY")),
-                    CustomDecimalFormat.TWO_DECIMAL_FORMAT.format(accessor.getServerData().getDouble("BurstVelocityZ"))
+                    DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(accessor.getServerData().getDouble("BurstVelocityX")),
+                    DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(accessor.getServerData().getDouble("BurstVelocityY")),
+                    DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(accessor.getServerData().getDouble("BurstVelocityZ"))
             ));
 
             tooltip.add(Component.translatable("tooltip.mana_jade.mana_spreader_burst_ticks_before_mana_loss",
