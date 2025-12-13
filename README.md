@@ -10,7 +10,11 @@
     - 产能花魔力存储
     - 功能花魔力存储
     - 魔力发射器魔力存储
-    - 魔力发射器信息：
+    - 魔力池催化器
+    - 符文祭坛配方进度
+    - 泰拉凝聚板配方进度
+    - 白雏菊配方进度
+    - 魔力发射器脉冲信息：
       - （魔力发射器相关信息支持透镜）
       - 脉冲初始魔力
       - 脉冲速度
@@ -44,6 +48,9 @@ Made by **AqumpusAXY**
     - Botania Generating Flower Storage
     - Botania Functional Flower Storage
     - Botania Mana Spreader Storage
+    - Mana Pool Catalyst
+    - Runic Altar Recipe Progress
+    - Terra Plate Recipe Progress
     - Botania Mana Spreader Burst Info :
       - ( Mana Spreader related information support Lens. )
       - Burst Starting Mana
