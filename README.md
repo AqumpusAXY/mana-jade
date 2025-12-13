@@ -20,6 +20,7 @@
       - 脉冲速度
       - 脉冲魔力开始流失前游戏刻
       - 脉冲每游戏刻流失魔力
+所有信息均可配置！
 
 ### 📥 依赖
 
@@ -57,6 +58,7 @@ Made by **AqumpusAXY**
       - Burst Velocity
       - Burst Ticks Before Mana Loss
       - Burst Mana Loss Per Tick
+All information is configurable!
 
 ### 📥 Dependencies
 
