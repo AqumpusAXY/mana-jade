@@ -6,6 +6,7 @@
   "refmap": "mana_jade.refmap.json",
   "mixins": [
     "ManaSpreaderGetBurstInvoker",
+    "ManaStarBlockEntityMixin",
     "PureDaisyBlockEntityMixin",
     "PureDaisyTicksRemainingAccessor",
     "TerrestrialAgglomerationPlateBlockEntityMixin"

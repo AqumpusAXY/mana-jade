@@ -5,6 +5,7 @@ import github.aqumpusaxy.mana_jade.plugin.block_entity_info.ManaPoolCatalystComp
 import github.aqumpusaxy.mana_jade.plugin.block_entity_info.ManaSpreaderBurstComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.block_entity_info.RunicAltarComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.block_entity_info.TerraPlateComponentProvider;
+import github.aqumpusaxy.mana_jade.plugin.flora_info.ManaStarComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.flora_info.PureDaisyComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.mana_storage.ManaPoolComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.mana_storage.ManaSpreaderComponentProvider;
@@ -21,6 +22,7 @@ import vazkii.botania.common.block.block_entity.RunicAltarBlockEntity;
 import vazkii.botania.common.block.block_entity.TerrestrialAgglomerationPlateBlockEntity;
 import vazkii.botania.common.block.block_entity.mana.ManaPoolBlockEntity;
 import vazkii.botania.common.block.block_entity.mana.ManaSpreaderBlockEntity;
+import vazkii.botania.common.block.flower.ManastarBlockEntity;
 import vazkii.botania.common.block.flower.PureDaisyBlockEntity;
 import vazkii.botania.common.block.mana.ManaPoolBlock;
 import vazkii.botania.common.block.mana.ManaSpreaderBlock;
@@ -47,6 +49,8 @@ public class BotaniaPlugin implements IWailaPlugin {
 
     public static final ResourceLocation PURE_DAISY_RECIPE_PROGRESS =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "pure_daisy_recipe_progress");
+    public static final ResourceLocation MANA_STAR_INFO =
+            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "mana_star_info");
 
 
     @Override
@@ -60,6 +64,7 @@ public class BotaniaPlugin implements IWailaPlugin {
         registration.registerBlockDataProvider(TerraPlateComponentProvider.INSTANCE, TerrestrialAgglomerationPlateBlockEntity.class);
 
         registration.registerBlockDataProvider(PureDaisyComponentProvider.INSTANCE, PureDaisyBlockEntity.class);
+        registration.registerBlockDataProvider(ManaStarComponentProvider.INSTANCE, ManastarBlockEntity.class);
     }
 
     @Override
@@ -75,6 +80,8 @@ public class BotaniaPlugin implements IWailaPlugin {
         registration.registerBlockComponent(TerraPlateComponentProvider.INSTANCE, TerrestrialAgglomerationPlateBlock.class);
 
         registration.registerBlockComponent(PureDaisyComponentProvider.INSTANCE, FlowerBlock.class);
+        registration.registerBlockComponent(ManaStarComponentProvider.INSTANCE, FlowerBlock.class);
         registration.registerBlockComponent(PureDaisyComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
+        registration.registerBlockComponent(ManaStarComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
     }
 }
