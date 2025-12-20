@@ -12,6 +12,7 @@
   "config.jade.plugin_mana_jade.mana_star_info": "Mana Star Info",
 
   "config.jade.plugin_mana_jade.hydroangeas_info": "Hydroangeas Info",
+  "config.jade.plugin_mana_jade.endoflame_info": "Endoflame Info",
 
   "tooltip.mana_jade.mana_receiver_storage": "Mana: %d/%d",
   "tooltip.mana_jade.creative_mana_pool_storage": "Mana: ∞",
@@ -27,6 +28,8 @@
 
   "tootip.mana_jade.hydroangeas_mana_per_second": "Mana: %s/s",
   "tootip.mana_jade.hydroangeas_decay_time": "Decay time: %ss",
+  "tootip.mana_jade.endoflame_mana_per_second": "Mana: %s/s",
+  "tootip.mana_jade.endoflame_burn_time": "Burn Time: %ss",
 
   "tooltip.mana_jade.true": "true",
   "tooltip.mana_jade.false": "false",

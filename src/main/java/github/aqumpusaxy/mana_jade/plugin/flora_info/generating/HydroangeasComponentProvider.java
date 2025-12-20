@@ -21,17 +21,17 @@ public enum HydroangeasComponentProvider implements IBlockComponentProvider, ISe
     public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
         CompoundTag data = accessor.getServerData();
 
-        if (data.contains("ManaPerSecond")) {
+        if (data.contains("HydroangeasManaPerSecond")) {
             tooltip.add(
                     Component.translatable("tootip.mana_jade.hydroangeas_mana_per_second",
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("ManaPerSecond")))
+                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("HydroangeasManaPerSecond")))
             );
         }
 
-        if (data.contains("DecayTime")) {
+        if (data.contains("HydroangeasDecayTime")) {
             tooltip.add(
                     Component.translatable("tootip.mana_jade.hydroangeas_decay_time",
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("DecayTime")))
+                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("HydroangeasDecayTime")))
             );
         }
     }
@@ -41,11 +41,11 @@ public enum HydroangeasComponentProvider implements IBlockComponentProvider, ISe
         HydroangeasBlockEntity blockEntity = (HydroangeasBlockEntity) accessor.getBlockEntity();
 
         //每秒魔力产出
-        data.putDouble("ManaPerSecond", GeneratingFloraCalc.getFluidGeneratorManaPerSecond(blockEntity));
+        data.putDouble("HydroangeasManaPerSecond", GeneratingFloraCalc.getFluidGeneratorManaPerSecond(blockEntity));
 
         //枯萎时间
         data.putDouble(
-                "DecayTime", (HydroangeasBlockEntity.DECAY_TIME -
+                "HydroangeasDecayTime", (HydroangeasBlockEntity.DECAY_TIME -
                         ((HydroangeasPassiveDecayTicksAccessor) blockEntity).getPassiveDecayTicks()) / 20D
         );
     }
