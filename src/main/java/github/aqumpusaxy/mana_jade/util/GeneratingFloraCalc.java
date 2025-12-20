@@ -1,11 +1,11 @@
 package github.aqumpusaxy.mana_jade.util;
 
-import github.aqumpusaxy.mana_jade.mixin.generator.FluidGeneratorManaPerTickAccessor;
+import github.aqumpusaxy.mana_jade.mixin.generator.FluidGeneratorFieldAccessor;
 import vazkii.botania.common.block.flower.generating.FluidGeneratorBlockEntity;
 
 public class GeneratingFloraCalc {
     public static double getFluidGeneratorManaPerSecond(FluidGeneratorBlockEntity fluidGenerator) {
-        int manaPerTick = ((FluidGeneratorManaPerTickAccessor) fluidGenerator).getManaPerTick();
+        int manaPerTick = ((FluidGeneratorFieldAccessor) fluidGenerator).getManaPerTick();
         int generationDelay = fluidGenerator.getGenerationDelay();
 
         return manaPerTick * 20D / generationDelay;

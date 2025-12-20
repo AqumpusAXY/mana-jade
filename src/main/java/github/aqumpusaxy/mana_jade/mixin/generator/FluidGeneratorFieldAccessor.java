@@ -5,7 +5,13 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 import vazkii.botania.common.block.flower.generating.FluidGeneratorBlockEntity;
 
 @Mixin(value = FluidGeneratorBlockEntity.class, remap = false)
-public interface FluidGeneratorManaPerTickAccessor {
+public interface FluidGeneratorFieldAccessor {
     @Accessor
     int getManaPerTick();
+
+    @Accessor
+    int getBurnTime();
+
+    @Accessor
+    int getCooldown();
 }
