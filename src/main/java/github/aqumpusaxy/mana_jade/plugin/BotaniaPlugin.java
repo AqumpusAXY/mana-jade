@@ -7,6 +7,7 @@ import github.aqumpusaxy.mana_jade.plugin.block_entity_info.RunicAltarComponentP
 import github.aqumpusaxy.mana_jade.plugin.block_entity_info.TerraPlateComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.flora_info.ManaStarComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.flora_info.PureDaisyComponentProvider;
+import github.aqumpusaxy.mana_jade.plugin.flora_info.generating.HydroangeasComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.mana_storage.ManaPoolComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.mana_storage.ManaSpreaderComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.mana_storage.SpecialFlowerComponentProvider;
@@ -24,6 +25,7 @@ import vazkii.botania.common.block.block_entity.mana.ManaPoolBlockEntity;
 import vazkii.botania.common.block.block_entity.mana.ManaSpreaderBlockEntity;
 import vazkii.botania.common.block.flower.ManastarBlockEntity;
 import vazkii.botania.common.block.flower.PureDaisyBlockEntity;
+import vazkii.botania.common.block.flower.generating.HydroangeasBlockEntity;
 import vazkii.botania.common.block.mana.ManaPoolBlock;
 import vazkii.botania.common.block.mana.ManaSpreaderBlock;
 import vazkii.botania.common.block.mana.RunicAltarBlock;
@@ -35,8 +37,8 @@ public class BotaniaPlugin implements IWailaPlugin {
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "mana_pool_storage");
     public static final ResourceLocation MANA_SPREADER_STORAGE =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "mana_spreader_storage");
-    public static final ResourceLocation SPECIAL_FLOWER_STORAGE =
-            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "special_flower_storage");
+    public static final ResourceLocation SPECIAL_FLORA_STORAGE =
+            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "special_flora_storage");
 
     public static final ResourceLocation MANA_POOL_CATALYST =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "mana_pool_catalyst");
@@ -52,6 +54,8 @@ public class BotaniaPlugin implements IWailaPlugin {
     public static final ResourceLocation MANA_STAR_INFO =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "mana_star_info");
 
+    public static final ResourceLocation HYDROANGEAS_INFO =
+            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "hydroangeas_info");
 
     @Override
     public void register(IWailaCommonRegistration registration) {
@@ -65,6 +69,7 @@ public class BotaniaPlugin implements IWailaPlugin {
 
         registration.registerBlockDataProvider(PureDaisyComponentProvider.INSTANCE, PureDaisyBlockEntity.class);
         registration.registerBlockDataProvider(ManaStarComponentProvider.INSTANCE, ManastarBlockEntity.class);
+        registration.registerBlockDataProvider(HydroangeasComponentProvider.INSTANCE, HydroangeasBlockEntity.class);
     }
 
     @Override
@@ -81,7 +86,10 @@ public class BotaniaPlugin implements IWailaPlugin {
 
         registration.registerBlockComponent(PureDaisyComponentProvider.INSTANCE, FlowerBlock.class);
         registration.registerBlockComponent(ManaStarComponentProvider.INSTANCE, FlowerBlock.class);
+        registration.registerBlockComponent(HydroangeasComponentProvider.INSTANCE, FlowerBlock.class);
+
         registration.registerBlockComponent(PureDaisyComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
         registration.registerBlockComponent(ManaStarComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
+        registration.registerBlockComponent(HydroangeasComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
     }
 }

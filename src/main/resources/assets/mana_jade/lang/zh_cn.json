@@ -1,7 +1,7 @@
 {
   "config.jade.plugin_mana_jade.mana_pool_storage": "魔力池魔力存储",
   "config.jade.plugin_mana_jade.mana_spreader_storage": "魔力发射器魔力存储",
-  "config.jade.plugin_mana_jade.special_flower_storage": "花魔力存储",
+  "config.jade.plugin_mana_jade.special_flora_storage": "花魔力存储",
 
   "config.jade.plugin_mana_jade.mana_pool_catalyst": "魔力池催化器",
   "config.jade.plugin_mana_jade.mana_spreader_burst_info": "魔力发射器脉冲信息",

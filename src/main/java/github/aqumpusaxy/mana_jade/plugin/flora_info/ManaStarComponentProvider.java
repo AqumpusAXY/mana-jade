@@ -23,6 +23,7 @@ public enum ManaStarComponentProvider implements IBlockComponentProvider, IServe
         if (!serverData.contains("deltaMana")) return;
 
         int deltaMana = serverData.getInt("deltaMana");
+        //TODO: 删除这一行
         if (deltaMana == 0) return;
 
         int hexColor = deltaMana > 0
@@ -38,6 +39,7 @@ public enum ManaStarComponentProvider implements IBlockComponentProvider, IServe
     @Override
     public void appendServerData(CompoundTag data, BlockAccessor accessor) {
         ManastarBlockEntity blockEntity = (ManastarBlockEntity) accessor.getBlockEntity();
+        //TODO: 如果deltaMana为0则返回
         data.putInt("deltaMana", ((ManaStarDeltaManaInvoker) blockEntity).mana_jade$getDeltaMana() / 3);
     }
 

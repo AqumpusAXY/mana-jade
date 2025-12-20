@@ -9,7 +9,10 @@
     "ManaStarBlockEntityMixin",
     "PureDaisyBlockEntityMixin",
     "PureDaisyTicksRemainingAccessor",
-    "TerrestrialAgglomerationPlateBlockEntityMixin"
+    "TerrestrialAgglomerationPlateBlockEntityMixin",
+    "generator.EndoflameBurnTimeAccessor",
+    "generator.FluidGeneratorManaPerTickAccessor",
+    "generator.HydroangeasPassiveDecayTicksAccessor"
   ],
   "client": [
   ],

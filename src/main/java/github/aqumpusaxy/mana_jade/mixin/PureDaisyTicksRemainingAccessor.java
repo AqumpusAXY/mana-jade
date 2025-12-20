@@ -6,6 +6,6 @@ import vazkii.botania.common.block.flower.PureDaisyBlockEntity;
 
 @Mixin(value = PureDaisyBlockEntity.class, remap = false)
 public interface PureDaisyTicksRemainingAccessor {
-    @Accessor("ticksRemaining")
+    @Accessor
     int[] getTicksRemaining();
 }

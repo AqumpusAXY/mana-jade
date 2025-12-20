@@ -1,7 +1,7 @@
 {
   "config.jade.plugin_mana_jade.mana_pool_storage": "Mana Pool Storage",
   "config.jade.plugin_mana_jade.mana_spreader_storage": "Mana Spreader Storage",
-  "config.jade.plugin_mana_jade.special_flower_storage": "Flower Storage",
+  "config.jade.plugin_mana_jade.special_flora_storage": "Flora Storage",
 
   "config.jade.plugin_mana_jade.mana_pool_catalyst": "Mana Pool Catalyst",
   "config.jade.plugin_mana_jade.mana_spreader_burst_info": "Mana Spreader Burst Info",
@@ -10,6 +10,8 @@
 
   "config.jade.plugin_mana_jade.pure_daisy_recipe_progress": "Pure Daisy Recipe Progress",
   "config.jade.plugin_mana_jade.mana_star_info": "Mana Star Info",
+
+  "config.jade.plugin_mana_jade.hydroangeas_info": "Hydroangeas Info",
 
   "tooltip.mana_jade.mana_receiver_storage": "Mana: %d/%d",
   "tooltip.mana_jade.creative_mana_pool_storage": "Mana: ∞",
@@ -22,6 +24,9 @@
 
   "tooltip.mana_jade.pure_daisy_recipe_progress": "%s Progress: %d/%d s",
   "tooltip.mana_jade.mana_star_info": "Mana: %d/s",
+
+  "tootip.mana_jade.hydroangeas_mana_per_second": "Mana: %s/s",
+  "tootip.mana_jade.hydroangeas_decay_time": "Decay time: %ss",
 
   "tooltip.mana_jade.true": "true",
   "tooltip.mana_jade.false": "false",

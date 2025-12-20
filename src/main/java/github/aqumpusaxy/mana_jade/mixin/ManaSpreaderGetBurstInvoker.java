@@ -7,6 +7,6 @@ import vazkii.botania.common.entity.ManaBurstEntity;
 
 @Mixin(value = ManaSpreaderBlockEntity.class, remap = false)
 public interface ManaSpreaderGetBurstInvoker {
-    @Invoker("getBurst")
+    @Invoker
     ManaBurstEntity invokeGetBurst(boolean fake);
 }

@@ -23,9 +23,11 @@ public enum PureDaisyComponentProvider implements IBlockComponentProvider, IServ
             int[] timeRequired = accessor.getServerData().getIntArray("TimeRequired");
             int[] timeRemaining = accessor.getServerData().getIntArray("TimeRemaining");
             boolean isBoosted = isBoosted((SpecialFlowerBlockEntity) accessor.getBlockEntity());
+
             for (int i = 0; i < timeRemaining.length; i++) {
                 if (timeRemaining[i] >= 0) {
-                    tooltip.add(Component.translatable("tooltip.mana_jade.pure_daisy_recipe_progress",
+                    tooltip.add(
+                            Component.translatable("tooltip.mana_jade.pure_daisy_recipe_progress",
                             Component.translatable(getDirectionName(i)), timeToSeconds(timeRemaining[i], isBoosted),
                             timeToSeconds(timeRequired[i], isBoosted)));
                 }
