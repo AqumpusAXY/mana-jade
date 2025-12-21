@@ -9,6 +9,7 @@ import github.aqumpusaxy.mana_jade.plugin.flora_info.ManaStarComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.flora_info.PureDaisyComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.flora_info.generating.EndoflameComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.flora_info.generating.HydroangeasComponentProvider;
+import github.aqumpusaxy.mana_jade.plugin.flora_info.generating.RosaArcanaComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.flora_info.generating.ThermalilyComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.mana_storage.ManaPoolComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.mana_storage.ManaSpreaderComponentProvider;
@@ -29,6 +30,7 @@ import vazkii.botania.common.block.flower.ManastarBlockEntity;
 import vazkii.botania.common.block.flower.PureDaisyBlockEntity;
 import vazkii.botania.common.block.flower.generating.EndoflameBlockEntity;
 import vazkii.botania.common.block.flower.generating.HydroangeasBlockEntity;
+import vazkii.botania.common.block.flower.generating.RosaArcanaBlockEntity;
 import vazkii.botania.common.block.flower.generating.ThermalilyBlockEntity;
 import vazkii.botania.common.block.mana.ManaPoolBlock;
 import vazkii.botania.common.block.mana.ManaSpreaderBlock;
@@ -64,6 +66,8 @@ public class BotaniaPlugin implements IWailaPlugin {
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "endoflame_info");
     public static final ResourceLocation THERMALILY_INFO =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "thermalily_info");
+    public static final ResourceLocation ROSA_ARCANA_INFO =
+            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "rosa_arcana_info");
 
     @Override
     public void register(IWailaCommonRegistration registration) {
@@ -80,6 +84,7 @@ public class BotaniaPlugin implements IWailaPlugin {
         registration.registerBlockDataProvider(HydroangeasComponentProvider.INSTANCE, HydroangeasBlockEntity.class);
         registration.registerBlockDataProvider(EndoflameComponentProvider.INSTANCE, EndoflameBlockEntity.class);
         registration.registerBlockDataProvider(ThermalilyComponentProvider.INSTANCE, ThermalilyBlockEntity.class);
+        registration.registerBlockDataProvider(RosaArcanaComponentProvider.INSTANCE, RosaArcanaBlockEntity.class);
     }
 
     @Override
@@ -99,11 +104,13 @@ public class BotaniaPlugin implements IWailaPlugin {
         registration.registerBlockComponent(HydroangeasComponentProvider.INSTANCE, FlowerBlock.class);
         registration.registerBlockComponent(EndoflameComponentProvider.INSTANCE, FlowerBlock.class);
         registration.registerBlockComponent(ThermalilyComponentProvider.INSTANCE, FlowerBlock.class);
+        registration.registerBlockComponent(RosaArcanaComponentProvider.INSTANCE, FlowerBlock.class);
 
         registration.registerBlockComponent(PureDaisyComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
         registration.registerBlockComponent(ManaStarComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
         registration.registerBlockComponent(HydroangeasComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
         registration.registerBlockComponent(EndoflameComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
         registration.registerBlockComponent(ThermalilyComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
+        registration.registerBlockComponent(RosaArcanaComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
     }
 }

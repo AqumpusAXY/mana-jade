@@ -12,7 +12,8 @@
     "TerrestrialAgglomerationPlateBlockEntityMixin",
     "generator.EndoflameBurnTimeAccessor",
     "generator.FluidGeneratorFieldAccessor",
-    "generator.HydroangeasPassiveDecayTicksAccessor"
+    "generator.HydroangeasPassiveDecayTicksAccessor",
+    "generator.RosaArcanaManaPerXpAccessor"
   ],
   "client": [
   ],

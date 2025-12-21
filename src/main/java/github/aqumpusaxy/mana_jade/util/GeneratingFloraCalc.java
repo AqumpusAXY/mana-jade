@@ -14,4 +14,8 @@ public class GeneratingFloraCalc {
     public static double getEndoflameManaPerSecond() {
         return 3 * 20D / 2;
     }
+
+    public static int getRosaArcanaXpPerSecond() {
+        return 20;
+    }
 }

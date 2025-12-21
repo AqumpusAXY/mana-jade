@@ -14,6 +14,7 @@
   "config.jade.plugin_mana_jade.hydroangeas_info": "Hydroangeas Info",
   "config.jade.plugin_mana_jade.endoflame_info": "Endoflame Info",
   "config.jade.plugin_mana_jade.thermalily_info": "Thermalily Info",
+  "config.jade.plugin_mana_jade.rosa_arcana_info": "Rosa Arcana Info",
 
   "tooltip.mana_jade.mana_receiver_storage": "Mana: %d/%d",
   "tooltip.mana_jade.creative_mana_pool_storage": "Mana: ∞",
@@ -34,6 +35,8 @@
   "tooltip.mana_jade.thermalily_mana_per_second": "Mana: %s/s",
   "tooltip.mana_jade.thermalily_burn_time": "Burn Time: %ss",
   "tooltip.mana_jade.thermalily_cooldown_time": "Cooldown: %ss/%ss",
+  "tooltip.mana_jade.rosa_arcana_mana_per_xp": "Mana: %d/xp",
+  "tooltip.mana_jade.rosa_arcana_xp_per_second": "Xp From Player: %d/s",
 
   "tooltip.mana_jade.true": "true",
   "tooltip.mana_jade.false": "false",
