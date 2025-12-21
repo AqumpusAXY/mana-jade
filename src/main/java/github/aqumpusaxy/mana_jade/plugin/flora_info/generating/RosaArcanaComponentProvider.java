@@ -22,13 +22,17 @@ public enum RosaArcanaComponentProvider implements IBlockComponentProvider, ISer
 
         if (data.contains("RosaArcanaManaPerXp")) {
             tooltip.add(
-                    Component.translatable("tooltip.mana_jade.rosa_arcana_mana_per_xp", data.getInt("RosaArcanaManaPerXp"))
+                    Component.translatable("tooltip.mana_jade.rosa_arcana_mana_per_xp",
+                            data.getInt("RosaArcanaManaPerXp")
+                    )
             );
         }
 
         if (data.contains("RosaArcanaXpPerSecond")) {
             tooltip.add(
-                    Component.translatable("tooltip.mana_jade.rosa_arcana_xp_per_second", data.getInt("RosaArcanaXpPerSecond"))
+                    Component.translatable("tooltip.mana_jade.rosa_arcana_xp_per_second",
+                            data.getInt("RosaArcanaXpPerSecond")
+                    )
             );
         }
     }

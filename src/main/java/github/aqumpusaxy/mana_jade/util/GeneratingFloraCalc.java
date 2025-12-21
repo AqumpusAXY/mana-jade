@@ -18,4 +18,12 @@ public class GeneratingFloraCalc {
     public static int getRosaArcanaXpPerSecond() {
         return 20;
     }
+
+    public static int getMunchdewManaPerLeaf() {
+        return 160;
+    }
+
+    public static int getMunchdewLeavesPerSecond() {
+        return 4;
+    }
 }

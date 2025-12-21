@@ -24,13 +24,17 @@ public enum EndoflameComponentProvider implements IBlockComponentProvider, IServ
         if (data.contains("EndoflameManaPerSecond")) {
             tooltip.add(
                     Component.translatable("tooltip.mana_jade.endoflame_mana_per_second",
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("EndoflameManaPerSecond"))));
+                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("EndoflameManaPerSecond"))
+                    )
+            );
         }
 
         if (data.contains("EndoflameBurnTime")) {
             tooltip.add(
                     Component.translatable("tooltip.mana_jade.endoflame_burn_time",
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("EndoflameBurnTime"))));
+                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("EndoflameBurnTime"))
+                    )
+            );
         }
     }
 

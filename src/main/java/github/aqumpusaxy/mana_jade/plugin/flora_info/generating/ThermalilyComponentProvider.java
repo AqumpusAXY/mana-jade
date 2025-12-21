@@ -24,20 +24,23 @@ public enum ThermalilyComponentProvider implements IBlockComponentProvider, ISer
         if (data.contains("ThermalilyManaPerSecond")) {
             tooltip.add(
                     Component.translatable("tooltip.mana_jade.thermalily_mana_per_second",
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("ThermalilyManaPerSecond")))
+                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("ThermalilyManaPerSecond"))
+                    )
             );
         }
 
         if (data.contains("ThermalilyBurnTime")) {
             tooltip.add(
                     Component.translatable("tooltip.mana_jade.thermalily_burn_time",
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("ThermalilyBurnTime")))
+                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("ThermalilyBurnTime"))
+                    )
             );
         } else if (data.contains("ThermalilyCooldown") && data.contains("ThermalilyCooldownTime")) {
             tooltip.add(
                     Component.translatable("tooltip.mana_jade.thermalily_cooldown_time",
                             DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("ThermalilyCooldown")),
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("ThermalilyCooldownTime")))
+                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("ThermalilyCooldownTime"))
+                    )
             );
         }
     }

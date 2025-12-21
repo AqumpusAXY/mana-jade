@@ -24,14 +24,16 @@ public enum HydroangeasComponentProvider implements IBlockComponentProvider, ISe
         if (data.contains("HydroangeasManaPerSecond")) {
             tooltip.add(
                     Component.translatable("tooltip.mana_jade.hydroangeas_mana_per_second",
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("HydroangeasManaPerSecond")))
+                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("HydroangeasManaPerSecond"))
+                    )
             );
         }
 
         if (data.contains("HydroangeasDecayTime")) {
             tooltip.add(
                     Component.translatable("tooltip.mana_jade.hydroangeas_decay_time",
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("HydroangeasDecayTime")))
+                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("HydroangeasDecayTime"))
+                    )
             );
         }
     }
