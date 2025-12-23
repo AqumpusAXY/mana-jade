@@ -26,7 +26,7 @@
   "tooltip.mana_jade.mana_spreader_burst_ticks_before_mana_loss": "Burst Ticks Before Mana Loss: %d",
   "tooltip.mana_jade.mana_spreader_burst_mana_loss": "Burst Mana Loss Per Tick: %d",
 
-  "tooltip.mana_jade.pure_daisy_recipe_progress": "%s Progress: %d/%d s",
+  "tooltip.mana_jade.pure_daisy_recipe_progress": "%s Progress: %s/%s s",
   "tooltip.mana_jade.mana_star_info": "Mana: %s/s",
 
   "tooltip.mana_jade.hydroangeas_mana_per_second": "Mana: %s/s",
