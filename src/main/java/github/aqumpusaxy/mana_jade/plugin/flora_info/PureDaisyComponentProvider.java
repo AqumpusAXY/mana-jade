@@ -1,8 +1,8 @@
 package github.aqumpusaxy.mana_jade.plugin.flora_info;
 
-import github.aqumpusaxy.mana_jade.invoker.PureDaisyTicksRequiredInvoker;
-import github.aqumpusaxy.mana_jade.mixin.PureDaisyTicksRemainingAccessor;
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
+import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
+import github.aqumpusaxy.mana_jade.util.DecimalFormatUtil;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -11,63 +11,50 @@ import snownee.jade.api.IBlockComponentProvider;
 import snownee.jade.api.IServerDataProvider;
 import snownee.jade.api.ITooltip;
 import snownee.jade.api.config.IPluginConfig;
-import vazkii.botania.api.block_entity.SpecialFlowerBlockEntity;
-import vazkii.botania.common.block.flower.PureDaisyBlockEntity;
 
 public enum PureDaisyComponentProvider implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
     INSTANCE;
 
     @Override
     public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
-        if (accessor.getServerData().contains("TimeRemaining")) {
-            int[] timeRequired = accessor.getServerData().getIntArray("TimeRequired");
-            int[] timeRemaining = accessor.getServerData().getIntArray("TimeRemaining");
-            boolean isBoosted = isBoosted((SpecialFlowerBlockEntity) accessor.getBlockEntity());
+        CompoundTag data = accessor.getServerData();
 
-            for (int i = 0; i < timeRemaining.length; i++) {
-                if (timeRemaining[i] >= 0) {
-                    tooltip.add(
-                            Component.translatable("tooltip.mana_jade.pure_daisy_recipe_progress",
-                            Component.translatable(getDirectionName(i)), timeToSeconds(timeRemaining[i], isBoosted),
-                            timeToSeconds(timeRequired[i], isBoosted)));
-                }
+        for (int i = 0; i < 8; i++) {
+            if (!(data.contains("PureDaisyTimeRemaining" + i) && data.contains("PureDaisyTimeRequired" + i))) return;
+
+            double timeRemaining = data.getDouble("PureDaisyTimeRemaining" + i);
+            double timeRequired = data.getDouble("PureDaisyTimeRequired" + i);
+
+            if (timeRemaining >= 0) {
+                tooltip.add(
+                        Component.translatable(
+                                "tooltip.mana_jade.pure_daisy_recipe_progress",
+                                Component.translatable(BotaniaFloraCalc.PureDaisyCalc.getDirKeys(i)),
+                                DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(timeRemaining),
+                                DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(timeRequired)
+                        )
+                );
             }
         }
     }
 
     @Override
     public void appendServerData(CompoundTag data, BlockAccessor accessor) {
-        PureDaisyBlockEntity blockEntity = (PureDaisyBlockEntity) accessor.getBlockEntity();
-        int[] ticksRequired = ((PureDaisyTicksRequiredInvoker) blockEntity).mana_jade$getTicksRequired();
-        int[] ticksRemaining = ((PureDaisyTicksRemainingAccessor) blockEntity).getTicksRemaining();
-        data.putIntArray("TimeRequired", ticksRequired);
-        data.putIntArray("TimeRemaining", ticksRemaining);
+        for (int i = 0; i < 8; i++) {
+            data.putDouble(
+                    "PureDaisyTimeRemaining" + i,
+                    BotaniaFloraCalc.PureDaisyCalc.getSecondsRemaining(accessor)[i]
+            );
+
+            data.putDouble(
+                    "PureDaisyTimeRequired" + i,
+                    BotaniaFloraCalc.PureDaisyCalc.getSecondsRequired(accessor)[i]
+            );
+        }
     }
 
     @Override
     public ResourceLocation getUid() {
         return BotaniaPlugin.PURE_DAISY_RECIPE_PROGRESS;
-    }
-
-    private static String getDirectionName(int i) {
-        return switch (i) {
-            case 0 -> "tooltip.mana_jade.direction.northwest";
-            case 1 -> "tooltip.mana_jade.direction.west";
-            case 2 -> "tooltip.mana_jade.direction.southwest";
-            case 3 -> "tooltip.mana_jade.direction.south";
-            case 4 -> "tooltip.mana_jade.direction.southeast";
-            case 5 -> "tooltip.mana_jade.direction.east";
-            case 6 -> "tooltip.mana_jade.direction.northeast";
-            case 7 -> "tooltip.mana_jade.direction.north";
-            default -> throw new IllegalArgumentException("Invalid direction index: " + i);
-        };
-    }
-
-    private static float timeToSeconds(int time, boolean isBoosted) {
-        return time * 8 / 20f / (isBoosted ? 2 : 1);
-    }
-
-    private static boolean isBoosted(SpecialFlowerBlockEntity blockEntity) {
-        return blockEntity.isOnSpecialSoil() && blockEntity.isOvergrowthAffected();
     }
 }

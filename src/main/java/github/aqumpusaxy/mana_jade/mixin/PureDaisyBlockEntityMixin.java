@@ -16,6 +16,7 @@ import vazkii.botania.common.block.flower.PureDaisyBlockEntity;
 public abstract class PureDaisyBlockEntityMixin implements PureDaisyTicksRequiredInvoker {
     @Shadow
     private int positionAt;
+
     @Shadow
     @Final
     private int[] ticksRemaining;

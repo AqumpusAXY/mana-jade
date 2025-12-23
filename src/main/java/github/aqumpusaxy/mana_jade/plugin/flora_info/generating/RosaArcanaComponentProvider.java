@@ -2,7 +2,7 @@ package github.aqumpusaxy.mana_jade.plugin.flora_info.generating;
 
 import github.aqumpusaxy.mana_jade.mixin.generator.RosaArcanaManaPerXpAccessor;
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
-import github.aqumpusaxy.mana_jade.util.GeneratingFloraCalc;
+import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -45,7 +45,7 @@ public enum RosaArcanaComponentProvider implements IBlockComponentProvider, ISer
         data.putInt("RosaArcanaManaPerXp", ((RosaArcanaManaPerXpAccessor) blockEntity).getManaPerXp());
 
         //每秒吸收玩家经验
-        data.putInt("RosaArcanaXpPerSecond", GeneratingFloraCalc.getRosaArcanaXpPerSecond());
+        data.putInt("RosaArcanaXpPerSecond", BotaniaFloraCalc.getRosaArcanaXpPerSecond());
     }
 
     @Override

@@ -3,7 +3,7 @@ package github.aqumpusaxy.mana_jade.plugin.flora_info.generating;
 import github.aqumpusaxy.mana_jade.mixin.generator.MunchdewCooldownAccessor;
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import github.aqumpusaxy.mana_jade.util.DecimalFormatUtil;
-import github.aqumpusaxy.mana_jade.util.GeneratingFloraCalc;
+import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -52,10 +52,10 @@ public enum MunchdewComponentProvider implements IBlockComponentProvider, IServe
         MunchdewBlockEntity blockEntity = (MunchdewBlockEntity) accessor.getBlockEntity();
 
         //每树叶转换魔力
-        data.putInt("MunchdewManaPerLeaf", GeneratingFloraCalc.getMunchdewManaPerLeaf());
+        data.putInt("MunchdewManaPerLeaf", BotaniaFloraCalc.getMunchdewManaPerLeaf());
 
         //每秒破坏树叶
-        data.putInt("MunchdewLeavesPerSecond", GeneratingFloraCalc.getMunchdewLeavesPerSecond());
+        data.putInt("MunchdewLeavesPerSecond", BotaniaFloraCalc.getMunchdewLeavesPerSecond());
 
         //冷却时间
         int cooldown = ((MunchdewCooldownAccessor) blockEntity).getCooldown();

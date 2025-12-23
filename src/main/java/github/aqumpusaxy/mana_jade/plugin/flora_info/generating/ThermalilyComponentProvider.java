@@ -3,7 +3,7 @@ package github.aqumpusaxy.mana_jade.plugin.flora_info.generating;
 import github.aqumpusaxy.mana_jade.mixin.generator.FluidGeneratorFieldAccessor;
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import github.aqumpusaxy.mana_jade.util.DecimalFormatUtil;
-import github.aqumpusaxy.mana_jade.util.GeneratingFloraCalc;
+import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -50,7 +50,7 @@ public enum ThermalilyComponentProvider implements IBlockComponentProvider, ISer
         ThermalilyBlockEntity blockEntity = (ThermalilyBlockEntity) accessor.getBlockEntity();
 
         //每秒魔力产出
-        data.putDouble("ThermalilyManaPerSecond", GeneratingFloraCalc.getFluidGeneratorManaPerSecond(blockEntity));
+        data.putDouble("ThermalilyManaPerSecond", BotaniaFloraCalc.getFluidGeneratorManaPerSecond(blockEntity));
 
         //燃烧时间和冷却时间
         int burnTime = ((FluidGeneratorFieldAccessor) blockEntity).getBurnTime();
