@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(Dist.CLIENT)
 public class ClientInit {
     @SubscribeEvent
-    public static void onPlayerJoin(RecipesUpdatedEvent event) {
+    public static void onRecipesUpdated(RecipesUpdatedEvent event) {
         ManaPoolCatalystManager.init();
     }
 }
