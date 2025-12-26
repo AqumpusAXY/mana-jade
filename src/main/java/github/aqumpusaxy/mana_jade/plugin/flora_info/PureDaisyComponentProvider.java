@@ -20,36 +20,39 @@ public enum PureDaisyComponentProvider implements IBlockComponentProvider, IServ
         CompoundTag data = accessor.getServerData();
 
         for (int i = 0; i < 8; i++) {
-            if (!(data.contains("PureDaisyTimeRemaining" + i) && data.contains("PureDaisyTimeRequired" + i))) return;
+            if (!(data.contains("PureDaisyTimeRemaining" + i) && data.contains("PureDaisyTimeRequired" + i))) continue;
 
             double timeRemaining = data.getDouble("PureDaisyTimeRemaining" + i);
             double timeRequired = data.getDouble("PureDaisyTimeRequired" + i);
 
-            if (timeRemaining >= 0) {
-                tooltip.add(
-                        Component.translatable(
-                                "tooltip.mana_jade.pure_daisy_recipe_progress",
-                                Component.translatable(BotaniaFloraCalc.PureDaisyCalc.getDirKeys(i)),
-                                DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(timeRemaining),
-                                DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(timeRequired)
-                        )
-                );
-            }
+            tooltip.add(
+                    Component.translatable(
+                            "tooltip.mana_jade.pure_daisy_recipe_progress",
+                            Component.translatable(BotaniaFloraCalc.PureDaisyCalc.getDirKeys(i)),
+                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(timeRemaining),
+                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(timeRequired)
+                    )
+            );
         }
     }
 
     @Override
     public void appendServerData(CompoundTag data, BlockAccessor accessor) {
         for (int i = 0; i < 8; i++) {
-            data.putDouble(
-                    "PureDaisyTimeRemaining" + i,
-                    BotaniaFloraCalc.PureDaisyCalc.getSecondsRemaining(accessor)[i]
-            );
+            double timeRemaining = BotaniaFloraCalc.PureDaisyCalc.getSecondsRemaining(accessor)[i];
+            double timeRequired = BotaniaFloraCalc.PureDaisyCalc.getSecondsRequired(accessor)[i];
 
-            data.putDouble(
-                    "PureDaisyTimeRequired" + i,
-                    BotaniaFloraCalc.PureDaisyCalc.getSecondsRequired(accessor)[i]
-            );
+            if (timeRemaining > 0) {
+                data.putDouble(
+                        "PureDaisyTimeRemaining" + i,
+                        timeRemaining
+                );
+
+                data.putDouble(
+                        "PureDaisyTimeRequired" + i,
+                        timeRequired
+                );
+            }
         }
     }
 
