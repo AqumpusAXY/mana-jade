@@ -2,8 +2,8 @@ package github.aqumpusaxy.mana_jade.plugin.flora_info.generating;
 
 import github.aqumpusaxy.mana_jade.mixin.generator.FluidGeneratorFieldAccessor;
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
-import github.aqumpusaxy.mana_jade.util.DecimalFormatUtil;
 import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
+import github.aqumpusaxy.mana_jade.util.DecimalFormatUtil;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;

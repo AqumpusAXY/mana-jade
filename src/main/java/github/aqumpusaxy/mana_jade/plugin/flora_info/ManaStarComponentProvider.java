@@ -1,6 +1,5 @@
 package github.aqumpusaxy.mana_jade.plugin.flora_info;
 
-import github.aqumpusaxy.mana_jade.invoker.ManaStarDeltaManaInvoker;
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
 import github.aqumpusaxy.mana_jade.util.ColorUtil;
@@ -14,7 +13,6 @@ import snownee.jade.api.IBlockComponentProvider;
 import snownee.jade.api.IServerDataProvider;
 import snownee.jade.api.ITooltip;
 import snownee.jade.api.config.IPluginConfig;
-import vazkii.botania.common.block.flower.ManastarBlockEntity;
 
 public enum ManaStarComponentProvider implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
     INSTANCE;

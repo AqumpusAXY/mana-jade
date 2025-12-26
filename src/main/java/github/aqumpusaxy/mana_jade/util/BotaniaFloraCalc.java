@@ -6,7 +6,6 @@ import github.aqumpusaxy.mana_jade.mixin.PureDaisyTicksRemainingAccessor;
 import github.aqumpusaxy.mana_jade.mixin.generator.FluidGeneratorFieldAccessor;
 import snownee.jade.api.BlockAccessor;
 import vazkii.botania.api.block_entity.SpecialFlowerBlockEntity;
-import vazkii.botania.common.block.flower.ManastarBlockEntity;
 import vazkii.botania.common.block.flower.PureDaisyBlockEntity;
 import vazkii.botania.common.block.flower.generating.FluidGeneratorBlockEntity;
 
