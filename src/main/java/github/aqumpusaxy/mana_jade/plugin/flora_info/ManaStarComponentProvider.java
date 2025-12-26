@@ -2,6 +2,7 @@ package github.aqumpusaxy.mana_jade.plugin.flora_info;
 
 import github.aqumpusaxy.mana_jade.invoker.ManaStarDeltaManaInvoker;
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
+import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
 import github.aqumpusaxy.mana_jade.util.ColorUtil;
 import github.aqumpusaxy.mana_jade.util.DecimalFormatUtil;
 import net.minecraft.nbt.CompoundTag;
@@ -20,25 +21,27 @@ public enum ManaStarComponentProvider implements IBlockComponentProvider, IServe
 
     @Override
     public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
-        CompoundTag serverData = accessor.getServerData();
-        if (!serverData.contains("deltaMana")) return;
+        CompoundTag data = accessor.getServerData();
+        if (!data.contains("deltaMana")) return;
 
-        double deltaMana = serverData.getDouble("deltaMana");
+        double deltaMana = data.getDouble("deltaMana");
 
         int hexColor = deltaMana > 0
                 ? ColorUtil.rgbToHex(0.05F, 0.05F, 1F)
                 : ColorUtil.rgbToHex(1F, 0.05F, 0.05F);
 
         tooltip.add(
-                Component.translatable("tooltip.mana_jade.mana_star_info", DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(deltaMana))
+                Component.translatable(
+                                "tooltip.mana_jade.mana_star_info",
+                                DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(deltaMana)
+                        )
                         .withStyle(Style.EMPTY.withColor(hexColor))
         );
     }
 
     @Override
     public void appendServerData(CompoundTag data, BlockAccessor accessor) {
-        ManastarBlockEntity blockEntity = (ManastarBlockEntity) accessor.getBlockEntity();
-        double deltaMana = ((ManaStarDeltaManaInvoker) blockEntity).mana_jade$getDeltaMana() / 3D;
+        double deltaMana = BotaniaFloraCalc.ManaStarCalc.getDeltaMana(accessor);
 
         if (deltaMana == 0) return;
 

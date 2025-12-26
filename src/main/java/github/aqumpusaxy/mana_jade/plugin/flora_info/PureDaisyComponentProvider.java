@@ -42,17 +42,17 @@ public enum PureDaisyComponentProvider implements IBlockComponentProvider, IServ
             double timeRemaining = BotaniaFloraCalc.PureDaisyCalc.getSecondsRemaining(accessor)[i];
             double timeRequired = BotaniaFloraCalc.PureDaisyCalc.getSecondsRequired(accessor)[i];
 
-            if (timeRemaining > 0) {
-                data.putDouble(
-                        "PureDaisyTimeRemaining" + i,
-                        timeRemaining
-                );
+            if (timeRemaining <= 0) continue;
 
-                data.putDouble(
-                        "PureDaisyTimeRequired" + i,
-                        timeRequired
-                );
-            }
+            data.putDouble(
+                    "PureDaisyTimeRemaining" + i,
+                    timeRemaining
+            );
+
+            data.putDouble(
+                    "PureDaisyTimeRequired" + i,
+                    timeRequired
+            );
         }
     }
 

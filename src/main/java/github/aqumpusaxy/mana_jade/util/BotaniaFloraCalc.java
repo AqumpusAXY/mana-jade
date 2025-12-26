@@ -1,10 +1,12 @@
 package github.aqumpusaxy.mana_jade.util;
 
+import github.aqumpusaxy.mana_jade.invoker.ManaStarDeltaManaInvoker;
 import github.aqumpusaxy.mana_jade.invoker.PureDaisyTicksRequiredInvoker;
 import github.aqumpusaxy.mana_jade.mixin.PureDaisyTicksRemainingAccessor;
 import github.aqumpusaxy.mana_jade.mixin.generator.FluidGeneratorFieldAccessor;
 import snownee.jade.api.BlockAccessor;
 import vazkii.botania.api.block_entity.SpecialFlowerBlockEntity;
+import vazkii.botania.common.block.flower.ManastarBlockEntity;
 import vazkii.botania.common.block.flower.PureDaisyBlockEntity;
 import vazkii.botania.common.block.flower.generating.FluidGeneratorBlockEntity;
 
@@ -52,6 +54,13 @@ public class BotaniaFloraCalc {
             return resultArr;
         }
     }
+
+    public static class ManaStarCalc {
+        public static double getDeltaMana(BlockAccessor accessor) {
+            return ((ManaStarDeltaManaInvoker) accessor.getBlockEntity()).mana_jade$getDeltaMana() / 3D;
+        }
+    }
+
     public static double getFluidGeneratorManaPerSecond(FluidGeneratorBlockEntity fluidGenerator) {
         int manaPerTick = ((FluidGeneratorFieldAccessor) fluidGenerator).getManaPerTick();
         int generationDelay = fluidGenerator.getGenerationDelay();
