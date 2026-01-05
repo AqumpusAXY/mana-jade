@@ -1,6 +1,5 @@
 package github.aqumpusaxy.mana_jade.plugin.flora_info.generating;
 
-import github.aqumpusaxy.mana_jade.mixin.generator.HydroangeasPassiveDecayTicksAccessor;
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
 import github.aqumpusaxy.mana_jade.util.DecimalFormatUtil;
@@ -12,7 +11,6 @@ import snownee.jade.api.IBlockComponentProvider;
 import snownee.jade.api.IServerDataProvider;
 import snownee.jade.api.ITooltip;
 import snownee.jade.api.config.IPluginConfig;
-import vazkii.botania.common.block.flower.generating.HydroangeasBlockEntity;
 
 public enum HydroangeasComponentProvider implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
     INSTANCE;
@@ -40,15 +38,16 @@ public enum HydroangeasComponentProvider implements IBlockComponentProvider, ISe
 
     @Override
     public void appendServerData(CompoundTag data, BlockAccessor accessor) {
-        HydroangeasBlockEntity blockEntity = (HydroangeasBlockEntity) accessor.getBlockEntity();
-
         //每秒魔力产出
-        data.putDouble("HydroangeasManaPerSecond", BotaniaFloraCalc.getFluidGeneratorManaPerSecond(blockEntity));
+        data.putDouble(
+                "HydroangeasManaPerSecond",
+                BotaniaFloraCalc.FluidGeneratorCalc.getFluidGeneratorManaPerSecond(accessor)
+        );
 
         //枯萎时间
         data.putDouble(
-                "HydroangeasDecayTime", (HydroangeasBlockEntity.DECAY_TIME -
-                        ((HydroangeasPassiveDecayTicksAccessor) blockEntity).getPassiveDecayTicks()) / 20D
+                "HydroangeasDecayTime",
+                BotaniaFloraCalc.FluidGeneratorCalc.getHydroangeasDecayTime(accessor)
         );
     }
 

@@ -1,6 +1,5 @@
 package github.aqumpusaxy.mana_jade.plugin.flora_info.generating;
 
-import github.aqumpusaxy.mana_jade.mixin.generator.FluidGeneratorFieldAccessor;
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
 import github.aqumpusaxy.mana_jade.util.DecimalFormatUtil;
@@ -12,7 +11,6 @@ import snownee.jade.api.IBlockComponentProvider;
 import snownee.jade.api.IServerDataProvider;
 import snownee.jade.api.ITooltip;
 import snownee.jade.api.config.IPluginConfig;
-import vazkii.botania.common.block.flower.generating.ThermalilyBlockEntity;
 
 public enum ThermalilyComponentProvider implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
     INSTANCE;
@@ -47,18 +45,25 @@ public enum ThermalilyComponentProvider implements IBlockComponentProvider, ISer
 
     @Override
     public void appendServerData(CompoundTag data, BlockAccessor accessor) {
-        ThermalilyBlockEntity blockEntity = (ThermalilyBlockEntity) accessor.getBlockEntity();
-
         //每秒魔力产出
-        data.putDouble("ThermalilyManaPerSecond", BotaniaFloraCalc.getFluidGeneratorManaPerSecond(blockEntity));
+        data.putDouble("ThermalilyManaPerSecond", BotaniaFloraCalc.FluidGeneratorCalc.getFluidGeneratorManaPerSecond(accessor));
 
         //燃烧时间和冷却时间
-        int burnTime = ((FluidGeneratorFieldAccessor) blockEntity).getBurnTime();
+        double burnTime = BotaniaFloraCalc.FluidGeneratorCalc.getFluidGeneratorBurnTime(accessor);
+        double cooldownTime = BotaniaFloraCalc.FluidGeneratorCalc.getFluidGeneratorCooldown(accessor);
+
         if (burnTime > 0) {
-            data.putDouble("ThermalilyBurnTime", burnTime / 20D);
-        } else {
-            data.putDouble("ThermalilyCooldown", ((FluidGeneratorFieldAccessor) blockEntity).getCooldown() /20D);
-            data.putDouble("ThermalilyCooldownTime", blockEntity.getCooldownTime(false) / 20D);
+            data.putDouble("ThermalilyBurnTime", burnTime);
+        } else if (cooldownTime > 0) {
+            data.putDouble(
+                    "ThermalilyCooldown",
+                    BotaniaFloraCalc.FluidGeneratorCalc.getFluidGeneratorCooldown(accessor)
+            );
+
+            data.putDouble(
+                    "ThermalilyCooldownTime",
+                    BotaniaFloraCalc.FluidGeneratorCalc.getFluidGeneratorCooldownTime(accessor)
+            );
         }
     }
 

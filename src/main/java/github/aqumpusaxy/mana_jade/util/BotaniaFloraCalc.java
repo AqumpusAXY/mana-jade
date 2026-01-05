@@ -4,11 +4,13 @@ import github.aqumpusaxy.mana_jade.invoker.ManaStarDeltaManaInvoker;
 import github.aqumpusaxy.mana_jade.invoker.PureDaisyTicksRequiredInvoker;
 import github.aqumpusaxy.mana_jade.mixin.PureDaisyTicksRemainingAccessor;
 import github.aqumpusaxy.mana_jade.mixin.generator.FluidGeneratorFieldAccessor;
+import github.aqumpusaxy.mana_jade.mixin.generator.HydroangeasPassiveDecayTicksAccessor;
 import snownee.jade.api.BlockAccessor;
 import vazkii.botania.api.block_entity.SpecialFlowerBlockEntity;
 import vazkii.botania.common.block.flower.ManastarBlockEntity;
 import vazkii.botania.common.block.flower.PureDaisyBlockEntity;
 import vazkii.botania.common.block.flower.generating.FluidGeneratorBlockEntity;
+import vazkii.botania.common.block.flower.generating.HydroangeasBlockEntity;
 
 public class BotaniaFloraCalc {
     public static class PureDaisyCalc {
@@ -63,11 +65,42 @@ public class BotaniaFloraCalc {
         }
     }
 
-    public static double getFluidGeneratorManaPerSecond(FluidGeneratorBlockEntity fluidGenerator) {
-        int manaPerTick = ((FluidGeneratorFieldAccessor) fluidGenerator).getManaPerTick();
-        int generationDelay = fluidGenerator.getGenerationDelay();
+    public static class FluidGeneratorCalc {
+        public static double getFluidGeneratorManaPerSecond(BlockAccessor accessor) {
+            FluidGeneratorBlockEntity blockEntity = (FluidGeneratorBlockEntity) accessor.getBlockEntity();
 
-        return manaPerTick * 20D / generationDelay;
+            int manaPerTick = ((FluidGeneratorFieldAccessor) blockEntity).getManaPerTick();
+            int generationDelay = blockEntity.getGenerationDelay();
+
+            return manaPerTick * 20D / generationDelay * (isBoosted(blockEntity) ? 2 : 1);
+        }
+
+        public static double getFluidGeneratorBurnTime(BlockAccessor accessor) {
+            FluidGeneratorBlockEntity blockEntity = (FluidGeneratorBlockEntity) accessor.getBlockEntity();
+
+            int burnTime = ((FluidGeneratorFieldAccessor) blockEntity).getBurnTime();
+
+            return ticksToSeconds(burnTime) / (isBoosted(blockEntity) ? 2 : 1);
+        }
+
+        public static double getFluidGeneratorCooldown(BlockAccessor accessor) {
+            FluidGeneratorBlockEntity blockEntity = (FluidGeneratorBlockEntity) accessor.getBlockEntity();
+
+            return ticksToSeconds(((FluidGeneratorFieldAccessor) blockEntity).getCooldown()) / (isBoosted(blockEntity) ? 2 : 1);
+        }
+
+        public static double getFluidGeneratorCooldownTime(BlockAccessor accessor) {
+            FluidGeneratorBlockEntity blockEntity = (FluidGeneratorBlockEntity) accessor.getBlockEntity();
+
+            return ticksToSeconds(blockEntity.getCooldownTime(false)) / (isBoosted(blockEntity) ? 2 : 1);
+        }
+
+        public static double getHydroangeasDecayTime(BlockAccessor accessor) {
+            HydroangeasBlockEntity blockEntity = (HydroangeasBlockEntity) accessor.getBlockEntity();
+
+            return ticksToSeconds(HydroangeasBlockEntity.DECAY_TIME -
+                    ((HydroangeasPassiveDecayTicksAccessor) blockEntity).getPassiveDecayTicks()) / (isBoosted(blockEntity) ? 2 : 1);
+        }
     }
 
     public static double getEndoflameManaPerSecond() {
