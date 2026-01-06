@@ -48,9 +48,7 @@ public class BotaniaFloraCalc {
         private static double[] arrTicksToSeconds(PureDaisyBlockEntity blockEntity, int[] originArr) {
             double[] resultArr = new double[8];
             for (int i = 0; i < originArr.length; i++) {
-                resultArr[i] = isBoosted(blockEntity)
-                        ? ticksToSeconds(originArr[i]) * 8 / 2
-                        : ticksToSeconds(originArr[i]) * 8;
+                resultArr[i] = ticksToSeconds(originArr[i], blockEntity) * 8;
             }
 
             return resultArr;
@@ -80,26 +78,26 @@ public class BotaniaFloraCalc {
 
             int burnTime = ((FluidGeneratorFieldAccessor) blockEntity).getBurnTime();
 
-            return ticksToSeconds(burnTime) / (isBoosted(blockEntity) ? 2 : 1);
+            return ticksToSeconds(burnTime, blockEntity);
         }
 
         public static double getFluidGeneratorCooldown(BlockAccessor accessor) {
             FluidGeneratorBlockEntity blockEntity = (FluidGeneratorBlockEntity) accessor.getBlockEntity();
 
-            return ticksToSeconds(((FluidGeneratorFieldAccessor) blockEntity).getCooldown()) / (isBoosted(blockEntity) ? 2 : 1);
+            return ticksToSeconds(((FluidGeneratorFieldAccessor) blockEntity).getCooldown(), blockEntity);
         }
 
         public static double getFluidGeneratorCooldownTime(BlockAccessor accessor) {
             FluidGeneratorBlockEntity blockEntity = (FluidGeneratorBlockEntity) accessor.getBlockEntity();
 
-            return ticksToSeconds(blockEntity.getCooldownTime(false)) / (isBoosted(blockEntity) ? 2 : 1);
+            return ticksToSeconds(blockEntity.getCooldownTime(false), blockEntity);
         }
 
         public static double getHydroangeasDecayTime(BlockAccessor accessor) {
             HydroangeasBlockEntity blockEntity = (HydroangeasBlockEntity) accessor.getBlockEntity();
 
             return ticksToSeconds(HydroangeasBlockEntity.DECAY_TIME -
-                    ((HydroangeasPassiveDecayTicksAccessor) blockEntity).getPassiveDecayTicks()) / (isBoosted(blockEntity) ? 2 : 1);
+                    ((HydroangeasPassiveDecayTicksAccessor) blockEntity).getPassiveDecayTicks(), blockEntity);
         }
     }
 
@@ -119,8 +117,8 @@ public class BotaniaFloraCalc {
         return 4;
     }
 
-    public static double ticksToSeconds(int ticks) {
-        return ticks / 20D;
+    public static double ticksToSeconds(int ticks, SpecialFlowerBlockEntity flower) {
+        return ticks / 20D / (isBoosted(flower) ? 2 : 1);
     }
 
     public static boolean isBoosted(SpecialFlowerBlockEntity flower) {
