@@ -1,6 +1,5 @@
 package github.aqumpusaxy.mana_jade.plugin.flora_info.generating;
 
-import github.aqumpusaxy.mana_jade.mixin.generator.EndoflameBurnTimeAccessor;
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
 import github.aqumpusaxy.mana_jade.util.DecimalFormatUtil;
@@ -12,7 +11,6 @@ import snownee.jade.api.IBlockComponentProvider;
 import snownee.jade.api.IServerDataProvider;
 import snownee.jade.api.ITooltip;
 import snownee.jade.api.config.IPluginConfig;
-import vazkii.botania.common.block.flower.generating.EndoflameBlockEntity;
 
 public enum EndoflameComponentProvider implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
     INSTANCE;
@@ -40,13 +38,17 @@ public enum EndoflameComponentProvider implements IBlockComponentProvider, IServ
 
     @Override
     public void appendServerData(CompoundTag data, BlockAccessor accessor) {
-        EndoflameBlockEntity blockEntity = (EndoflameBlockEntity) accessor.getBlockEntity();
-
         //每秒魔力产出
-        data.putDouble("EndoflameManaPerSecond", BotaniaFloraCalc.getEndoflameManaPerSecond());
+        data.putDouble(
+                "EndoflameManaPerSecond",
+                BotaniaFloraCalc.EndoflameCalc.getEndoflameManaPerSecond(accessor)
+        );
 
         //燃烧时间
-        data.putDouble("EndoflameBurnTime", ((EndoflameBurnTimeAccessor) blockEntity).getBurnTime() / 20D);
+        data.putDouble(
+                "EndoflameBurnTime",
+                BotaniaFloraCalc.EndoflameCalc.getEndoflameBurnTime(accessor)
+        );
     }
 
     @Override

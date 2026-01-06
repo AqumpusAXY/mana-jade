@@ -3,12 +3,14 @@ package github.aqumpusaxy.mana_jade.util;
 import github.aqumpusaxy.mana_jade.invoker.ManaStarDeltaManaInvoker;
 import github.aqumpusaxy.mana_jade.invoker.PureDaisyTicksRequiredInvoker;
 import github.aqumpusaxy.mana_jade.mixin.PureDaisyTicksRemainingAccessor;
+import github.aqumpusaxy.mana_jade.mixin.generator.EndoflameBurnTimeAccessor;
 import github.aqumpusaxy.mana_jade.mixin.generator.FluidGeneratorFieldAccessor;
 import github.aqumpusaxy.mana_jade.mixin.generator.HydroangeasPassiveDecayTicksAccessor;
 import snownee.jade.api.BlockAccessor;
 import vazkii.botania.api.block_entity.SpecialFlowerBlockEntity;
 import vazkii.botania.common.block.flower.ManastarBlockEntity;
 import vazkii.botania.common.block.flower.PureDaisyBlockEntity;
+import vazkii.botania.common.block.flower.generating.EndoflameBlockEntity;
 import vazkii.botania.common.block.flower.generating.FluidGeneratorBlockEntity;
 import vazkii.botania.common.block.flower.generating.HydroangeasBlockEntity;
 
@@ -101,8 +103,21 @@ public class BotaniaFloraCalc {
         }
     }
 
-    public static double getEndoflameManaPerSecond() {
-        return 3 * 20D / 2;
+    public static class EndoflameCalc {
+        public static final int MANA_PER_TICK = 3;
+        public static final int GENERATION_DELAY = 2;
+
+        public static double getEndoflameManaPerSecond(BlockAccessor accessor) {
+            EndoflameBlockEntity blockEntity = (EndoflameBlockEntity) accessor.getBlockEntity();
+
+            return MANA_PER_TICK * 20D / GENERATION_DELAY * (isBoosted(blockEntity) ? 2 : 1);
+        }
+
+        public static double getEndoflameBurnTime(BlockAccessor accessor) {
+            EndoflameBlockEntity blockEntity = (EndoflameBlockEntity) accessor.getBlockEntity();
+
+            return ticksToSeconds(((EndoflameBurnTimeAccessor) blockEntity).getBurnTime(), blockEntity);
+        }
     }
 
     public static int getRosaArcanaXpPerSecond() {
