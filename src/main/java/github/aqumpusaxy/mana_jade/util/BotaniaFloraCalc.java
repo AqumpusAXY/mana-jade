@@ -26,6 +26,7 @@ public class BotaniaFloraCalc {
                 "tooltip.mana_jade.direction.northeast",
                 "tooltip.mana_jade.direction.north"
         };
+        private static final int DIR_COUNT = 8;
 
         public static String getDirKeys(int index) {
             return DIR_KEYS[index];
@@ -48,9 +49,9 @@ public class BotaniaFloraCalc {
         }
 
         private static double[] arrTicksToSeconds(PureDaisyBlockEntity blockEntity, int[] originArr) {
-            double[] resultArr = new double[8];
+            double[] resultArr = new double[DIR_COUNT];
             for (int i = 0; i < originArr.length; i++) {
-                resultArr[i] = ticksToSeconds(originArr[i], blockEntity) * 8;
+                resultArr[i] = ticksToSeconds(originArr[i], blockEntity) * DIR_COUNT;
             }
 
             return resultArr;
@@ -58,10 +59,14 @@ public class BotaniaFloraCalc {
     }
 
     public static class ManaStarCalc {
+        private static final double UPDATE_DELAY_SECONDS = 3D;
+
         public static double getDeltaMana(BlockAccessor accessor) {
             ManastarBlockEntity manastar = (ManastarBlockEntity) accessor.getBlockEntity();
 
-            return ((ManaStarDeltaManaInvoker) manastar).mana_jade$getDeltaMana() / (isBoosted(manastar) ? 1.5D : 3D);
+            return ((ManaStarDeltaManaInvoker) manastar).mana_jade$getDeltaMana() / (isBoosted(manastar)
+                    ? UPDATE_DELAY_SECONDS / 2
+                    : UPDATE_DELAY_SECONDS);
         }
     }
 
@@ -104,8 +109,8 @@ public class BotaniaFloraCalc {
     }
 
     public static class EndoflameCalc {
-        public static final int MANA_PER_TICK = 3;
-        public static final int GENERATION_DELAY = 2;
+        private static final int MANA_PER_TICK = 3;
+        private static final int GENERATION_DELAY = 2;
 
         public static double getEndoflameManaPerSecond(BlockAccessor accessor) {
             EndoflameBlockEntity blockEntity = (EndoflameBlockEntity) accessor.getBlockEntity();
