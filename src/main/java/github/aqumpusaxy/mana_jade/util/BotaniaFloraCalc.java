@@ -6,6 +6,7 @@ import github.aqumpusaxy.mana_jade.mixin.PureDaisyTicksRemainingAccessor;
 import github.aqumpusaxy.mana_jade.mixin.generator.EndoflameBurnTimeAccessor;
 import github.aqumpusaxy.mana_jade.mixin.generator.FluidGeneratorFieldAccessor;
 import github.aqumpusaxy.mana_jade.mixin.generator.HydroangeasPassiveDecayTicksAccessor;
+import github.aqumpusaxy.mana_jade.mixin.generator.RosaArcanaManaPerXpAccessor;
 import snownee.jade.api.BlockAccessor;
 import vazkii.botania.api.block_entity.SpecialFlowerBlockEntity;
 import vazkii.botania.common.block.flower.ManastarBlockEntity;
@@ -13,6 +14,7 @@ import vazkii.botania.common.block.flower.PureDaisyBlockEntity;
 import vazkii.botania.common.block.flower.generating.EndoflameBlockEntity;
 import vazkii.botania.common.block.flower.generating.FluidGeneratorBlockEntity;
 import vazkii.botania.common.block.flower.generating.HydroangeasBlockEntity;
+import vazkii.botania.common.block.flower.generating.RosaArcanaBlockEntity;
 
 public class BotaniaFloraCalc {
     public static class PureDaisyCalc {
@@ -125,8 +127,20 @@ public class BotaniaFloraCalc {
         }
     }
 
-    public static int getRosaArcanaXpPerSecond() {
-        return 20;
+    public static class RosaArcanaCalc{
+        private static final int XP_PER_TICK = 1;
+
+        public static int getRosaArcanaManaPerXp(BlockAccessor accessor) {
+            RosaArcanaBlockEntity blockEntity = (RosaArcanaBlockEntity) accessor.getBlockEntity();
+
+            return ((RosaArcanaManaPerXpAccessor) blockEntity).getManaPerXp();
+        }
+
+        public static int getRosaArcanaXpPerSecond(BlockAccessor accessor) {
+            RosaArcanaBlockEntity blockEntity = (RosaArcanaBlockEntity) accessor.getBlockEntity();
+
+            return XP_PER_TICK * 20 * (isBoosted(blockEntity) ? 2 : 1);
+        }
     }
 
     public static int getMunchdewManaPerLeaf() {

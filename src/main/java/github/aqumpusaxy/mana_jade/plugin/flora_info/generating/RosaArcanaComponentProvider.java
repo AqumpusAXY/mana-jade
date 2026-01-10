@@ -1,6 +1,5 @@
 package github.aqumpusaxy.mana_jade.plugin.flora_info.generating;
 
-import github.aqumpusaxy.mana_jade.mixin.generator.RosaArcanaManaPerXpAccessor;
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
 import net.minecraft.nbt.CompoundTag;
@@ -11,7 +10,6 @@ import snownee.jade.api.IBlockComponentProvider;
 import snownee.jade.api.IServerDataProvider;
 import snownee.jade.api.ITooltip;
 import snownee.jade.api.config.IPluginConfig;
-import vazkii.botania.common.block.flower.generating.RosaArcanaBlockEntity;
 
 public enum RosaArcanaComponentProvider implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
     INSTANCE;
@@ -39,13 +37,17 @@ public enum RosaArcanaComponentProvider implements IBlockComponentProvider, ISer
 
     @Override
     public void appendServerData(CompoundTag data, BlockAccessor accessor) {
-        RosaArcanaBlockEntity blockEntity = (RosaArcanaBlockEntity) accessor.getBlockEntity();
-
         //每经验转换魔力
-        data.putInt("RosaArcanaManaPerXp", ((RosaArcanaManaPerXpAccessor) blockEntity).getManaPerXp());
+        data.putInt(
+                "RosaArcanaManaPerXp",
+                BotaniaFloraCalc.RosaArcanaCalc.getRosaArcanaManaPerXp(accessor)
+        );
 
         //每秒吸收玩家经验
-        data.putInt("RosaArcanaXpPerSecond", BotaniaFloraCalc.getRosaArcanaXpPerSecond());
+        data.putInt(
+                "RosaArcanaXpPerSecond",
+                BotaniaFloraCalc.RosaArcanaCalc.getRosaArcanaXpPerSecond(accessor)
+        );
     }
 
     @Override
