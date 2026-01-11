@@ -1,4 +1,4 @@
-package github.aqumpusaxy.mana_jade.plugin.mana_storage;
+package github.aqumpusaxy.mana_jade.plugin.machine;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import github.aqumpusaxy.mana_jade.util.ElementProvider;
@@ -6,14 +6,14 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import snownee.jade.api.*;
 import snownee.jade.api.config.IPluginConfig;
-import vazkii.botania.common.block.block_entity.mana.ManaSpreaderBlockEntity;
+import vazkii.botania.common.block.block_entity.RunicAltarBlockEntity;
 
-public enum ManaSpreaderComponentProvider implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
+public enum RunicAltarComponentProvider implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
     INSTANCE;
 
     @Override
     public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
-        if (accessor.getServerData().contains("MaxMana") && accessor.getServerData().contains("CurrentMana")) {
+        if (accessor.getServerData().contains("MaxMana") && accessor.getServerData().getInt("MaxMana") > 0) {
             int mana = accessor.getServerData().getInt("CurrentMana");
             int maxMana = accessor.getServerData().getInt("MaxMana");
             tooltip.add(ElementProvider.manaProgressElement(mana, maxMana));
@@ -22,14 +22,14 @@ public enum ManaSpreaderComponentProvider implements IBlockComponentProvider, IS
 
     @Override
     public void appendServerData(CompoundTag data, BlockAccessor accessor) {
-        ManaSpreaderBlockEntity blockEntity = (ManaSpreaderBlockEntity) accessor.getBlockEntity();
-        data.putInt("MaxMana", blockEntity.getMaxMana());
+        RunicAltarBlockEntity blockEntity = (RunicAltarBlockEntity) accessor.getBlockEntity();
+        data.putInt("MaxMana", blockEntity.getTargetMana());
         data.putInt("CurrentMana", blockEntity.getCurrentMana());
     }
 
     @Override
     public ResourceLocation getUid() {
-        return BotaniaPlugin.MANA_SPREADER_STORAGE;
+        return BotaniaPlugin.RUNIC_ALTAR_RECIPE_PROGRESS;
     }
 
     @Override

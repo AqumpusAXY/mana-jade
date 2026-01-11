@@ -1,20 +1,19 @@
-package github.aqumpusaxy.mana_jade.plugin.block_entity_info;
+package github.aqumpusaxy.mana_jade.plugin.mana;
 
-import github.aqumpusaxy.mana_jade.invoker.TerraPlateGetRecipeManaInvoker;
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import github.aqumpusaxy.mana_jade.util.ElementProvider;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import snownee.jade.api.*;
 import snownee.jade.api.config.IPluginConfig;
-import vazkii.botania.common.block.block_entity.TerrestrialAgglomerationPlateBlockEntity;
+import vazkii.botania.api.block_entity.BindableSpecialFlowerBlockEntity;
 
-public enum TerraPlateComponentProvider implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
+public enum SpecialFlowerComponentProvider implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
     INSTANCE;
 
     @Override
     public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
-        if (accessor.getServerData().contains("MaxMana") && accessor.getServerData().getInt("MaxMana") > 0) {
+        if (accessor.getServerData().contains("MaxMana") && accessor.getServerData().contains("CurrentMana")) {
             int mana = accessor.getServerData().getInt("CurrentMana");
             int maxMana = accessor.getServerData().getInt("MaxMana");
             tooltip.add(ElementProvider.manaProgressElement(mana, maxMana));
@@ -23,14 +22,14 @@ public enum TerraPlateComponentProvider implements IBlockComponentProvider, ISer
 
     @Override
     public void appendServerData(CompoundTag data, BlockAccessor accessor) {
-        TerrestrialAgglomerationPlateBlockEntity blockEntity = (TerrestrialAgglomerationPlateBlockEntity) accessor.getBlockEntity();
-        data.putInt("MaxMana", ((TerraPlateGetRecipeManaInvoker) blockEntity).mana_jade$getRecipeMana());
-        data.putInt("CurrentMana", blockEntity.getCurrentMana());
+        BindableSpecialFlowerBlockEntity<?> blockEntity = (BindableSpecialFlowerBlockEntity<?>) accessor.getBlockEntity();
+        data.putInt("MaxMana", blockEntity.getMaxMana());
+        data.putInt("CurrentMana", blockEntity.getMana());
     }
 
     @Override
     public ResourceLocation getUid() {
-        return BotaniaPlugin.TERRA_PLATE_RECIPE_PROGRESS;
+        return BotaniaPlugin.SPECIAL_FLORA_STORAGE;
     }
 
     @Override

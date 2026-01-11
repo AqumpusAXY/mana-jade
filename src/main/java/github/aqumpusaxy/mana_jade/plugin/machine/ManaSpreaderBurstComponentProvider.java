@@ -1,4 +1,4 @@
-package github.aqumpusaxy.mana_jade.plugin.block_entity_info;
+package github.aqumpusaxy.mana_jade.plugin.machine;
 
 import github.aqumpusaxy.mana_jade.mixin.ManaSpreaderGetBurstInvoker;
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;

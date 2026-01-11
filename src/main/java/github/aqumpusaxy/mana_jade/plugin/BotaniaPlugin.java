@@ -1,16 +1,16 @@
 package github.aqumpusaxy.mana_jade.plugin;
 
 import github.aqumpusaxy.mana_jade.ManaJade;
-import github.aqumpusaxy.mana_jade.plugin.block_entity_info.ManaPoolCatalystComponentProvider;
-import github.aqumpusaxy.mana_jade.plugin.block_entity_info.ManaSpreaderBurstComponentProvider;
-import github.aqumpusaxy.mana_jade.plugin.block_entity_info.RunicAltarComponentProvider;
-import github.aqumpusaxy.mana_jade.plugin.block_entity_info.TerraPlateComponentProvider;
-import github.aqumpusaxy.mana_jade.plugin.flora_info.ManaStarComponentProvider;
-import github.aqumpusaxy.mana_jade.plugin.flora_info.PureDaisyComponentProvider;
-import github.aqumpusaxy.mana_jade.plugin.flora_info.generating.*;
-import github.aqumpusaxy.mana_jade.plugin.mana_storage.ManaPoolComponentProvider;
-import github.aqumpusaxy.mana_jade.plugin.mana_storage.ManaSpreaderComponentProvider;
-import github.aqumpusaxy.mana_jade.plugin.mana_storage.SpecialFlowerComponentProvider;
+import github.aqumpusaxy.mana_jade.plugin.flower.ManaStarComponentProvider;
+import github.aqumpusaxy.mana_jade.plugin.flower.PureDaisyComponentProvider;
+import github.aqumpusaxy.mana_jade.plugin.flower.generating.*;
+import github.aqumpusaxy.mana_jade.plugin.machine.ManaPoolCatalystComponentProvider;
+import github.aqumpusaxy.mana_jade.plugin.machine.ManaSpreaderBurstComponentProvider;
+import github.aqumpusaxy.mana_jade.plugin.machine.RunicAltarComponentProvider;
+import github.aqumpusaxy.mana_jade.plugin.machine.TerraPlateComponentProvider;
+import github.aqumpusaxy.mana_jade.plugin.mana.ManaPoolComponentProvider;
+import github.aqumpusaxy.mana_jade.plugin.mana.ManaSpreaderComponentProvider;
+import github.aqumpusaxy.mana_jade.plugin.mana.SpecialFlowerComponentProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.FlowerBlock;
 import snownee.jade.api.IWailaClientRegistration;

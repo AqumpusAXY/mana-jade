@@ -1,4 +1,4 @@
-package github.aqumpusaxy.mana_jade.plugin.mana_storage;
+package github.aqumpusaxy.mana_jade.plugin.mana;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import github.aqumpusaxy.mana_jade.util.ElementProvider;

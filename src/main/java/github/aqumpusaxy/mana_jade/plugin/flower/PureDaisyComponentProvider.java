@@ -1,4 +1,4 @@
-package github.aqumpusaxy.mana_jade.plugin.flora_info;
+package github.aqumpusaxy.mana_jade.plugin.flower;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
