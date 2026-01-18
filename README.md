@@ -14,6 +14,12 @@
     - 符文祭坛配方进度
     - 泰拉凝聚板配方进度
     - 白雏菊配方进度
+    - 魔力星魔力变化速率
+    - 水绣球信息
+    - 火红莲信息
+    - 炽玫瑰信息
+    - 阿卡纳蔷薇信息
+    - 咀叶花信息
     - 魔力发射器脉冲信息：
       - （魔力发射器相关信息支持透镜）
       - 脉冲初始魔力
@@ -53,6 +59,13 @@ Made by **AqumpusAXY**
     - Mana Pool Catalyst
     - Runic Altar Recipe Progress
     - Terra Plate Recipe Progress
+    - Pure Daisy Recipe Progress
+    - Mana Star Mana Change Rate
+    - Hydroangeas Info
+    - Endoflame Info
+    - Thermalily Info
+    - RosaArcana Info
+    - Munchdew Info
     - Botania Mana Spreader Burst Info :
       - ( Mana Spreader related information support Lens. )
       - Burst Starting Mana
