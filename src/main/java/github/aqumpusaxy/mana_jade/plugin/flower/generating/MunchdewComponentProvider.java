@@ -1,6 +1,5 @@
 package github.aqumpusaxy.mana_jade.plugin.flower.generating;
 
-import github.aqumpusaxy.mana_jade.mixin.generator.MunchdewCooldownAccessor;
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
 import github.aqumpusaxy.mana_jade.util.DecimalFormatUtil;
@@ -12,7 +11,6 @@ import snownee.jade.api.IBlockComponentProvider;
 import snownee.jade.api.IServerDataProvider;
 import snownee.jade.api.ITooltip;
 import snownee.jade.api.config.IPluginConfig;
-import vazkii.botania.common.block.flower.generating.MunchdewBlockEntity;
 
 public enum MunchdewComponentProvider implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
     INSTANCE;
@@ -41,7 +39,7 @@ public enum MunchdewComponentProvider implements IBlockComponentProvider, IServe
             tooltip.add(
                     Component.translatable("tooltip.mana_jade.munchdew_cooldown",
                             DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("MunchdewCooldown")),
-                            "80.00"
+                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("MunchdewCooldownPercent"))
                     )
             );
         }
@@ -49,18 +47,24 @@ public enum MunchdewComponentProvider implements IBlockComponentProvider, IServe
 
     @Override
     public void appendServerData(CompoundTag data, BlockAccessor accessor) {
-        MunchdewBlockEntity blockEntity = (MunchdewBlockEntity) accessor.getBlockEntity();
-
         //每树叶转换魔力
-        data.putInt("MunchdewManaPerLeaf", BotaniaFloraCalc.getMunchdewManaPerLeaf());
+        data.putInt(
+                "MunchdewManaPerLeaf",
+                BotaniaFloraCalc.MunchdewCalc.getMunchdewManaPerLeaf()
+        );
 
         //每秒破坏树叶
-        data.putInt("MunchdewLeavesPerSecond", BotaniaFloraCalc.getMunchdewLeavesPerSecond());
+        data.putInt(
+                "MunchdewLeavesPerSecond",
+                BotaniaFloraCalc.MunchdewCalc.getMunchdewLeavesPerSecond(accessor)
+        );
 
         //冷却时间
-        int cooldown = ((MunchdewCooldownAccessor) blockEntity).getCooldown();
+        double cooldown = BotaniaFloraCalc.MunchdewCalc.getMunchdewCooldown(accessor);
+        double cooldownTime = BotaniaFloraCalc.MunchdewCalc.getMunchdewCooldownTime(accessor);
         if (cooldown > 0) {
-            data.putDouble("MunchdewCooldown", cooldown / 20D);
+            data.putDouble("MunchdewCooldown", cooldown);
+            data.putDouble("MunchdewCooldownPercent", cooldownTime);
         }
     }
 

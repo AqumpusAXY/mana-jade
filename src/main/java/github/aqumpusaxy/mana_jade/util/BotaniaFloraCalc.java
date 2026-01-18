@@ -3,18 +3,12 @@ package github.aqumpusaxy.mana_jade.util;
 import github.aqumpusaxy.mana_jade.invoker.ManaStarDeltaManaInvoker;
 import github.aqumpusaxy.mana_jade.invoker.PureDaisyTicksRequiredInvoker;
 import github.aqumpusaxy.mana_jade.mixin.PureDaisyTicksRemainingAccessor;
-import github.aqumpusaxy.mana_jade.mixin.generator.EndoflameBurnTimeAccessor;
-import github.aqumpusaxy.mana_jade.mixin.generator.FluidGeneratorFieldAccessor;
-import github.aqumpusaxy.mana_jade.mixin.generator.HydroangeasPassiveDecayTicksAccessor;
-import github.aqumpusaxy.mana_jade.mixin.generator.RosaArcanaManaPerXpAccessor;
+import github.aqumpusaxy.mana_jade.mixin.generator.*;
 import snownee.jade.api.BlockAccessor;
 import vazkii.botania.api.block_entity.SpecialFlowerBlockEntity;
 import vazkii.botania.common.block.flower.ManastarBlockEntity;
 import vazkii.botania.common.block.flower.PureDaisyBlockEntity;
-import vazkii.botania.common.block.flower.generating.EndoflameBlockEntity;
-import vazkii.botania.common.block.flower.generating.FluidGeneratorBlockEntity;
-import vazkii.botania.common.block.flower.generating.HydroangeasBlockEntity;
-import vazkii.botania.common.block.flower.generating.RosaArcanaBlockEntity;
+import vazkii.botania.common.block.flower.generating.*;
 
 public class BotaniaFloraCalc {
     public static class PureDaisyCalc {
@@ -143,12 +137,32 @@ public class BotaniaFloraCalc {
         }
     }
 
-    public static int getMunchdewManaPerLeaf() {
-        return 160;
-    }
+    public static class MunchdewCalc {
+        private static final int MANA_PER_LEAF = 160;
+        private static final int LEAVES_PER_SECOND = 4;
+        private static final int COOLDOWN_TIME = 1600;
 
-    public static int getMunchdewLeavesPerSecond() {
-        return 4;
+        public static int getMunchdewManaPerLeaf() {
+            return MANA_PER_LEAF;
+        }
+
+        public static int getMunchdewLeavesPerSecond(BlockAccessor accessor) {
+            MunchdewBlockEntity blockEntity = (MunchdewBlockEntity) accessor.getBlockEntity();
+
+            return LEAVES_PER_SECOND * (isBoosted(blockEntity) ? 2 : 1);
+        }
+
+        public static double getMunchdewCooldown(BlockAccessor accessor) {
+            MunchdewBlockEntity blockEntity = (MunchdewBlockEntity) accessor.getBlockEntity();
+
+            return ticksToSeconds(((MunchdewCooldownAccessor) blockEntity).getCooldown(), blockEntity);
+        }
+
+        public static double getMunchdewCooldownTime(BlockAccessor accessor) {
+            MunchdewBlockEntity blockEntity = (MunchdewBlockEntity) accessor.getBlockEntity();
+
+            return ticksToSeconds(COOLDOWN_TIME, blockEntity);
+        }
     }
 
     public static double ticksToSeconds(int ticks, SpecialFlowerBlockEntity flower) {
