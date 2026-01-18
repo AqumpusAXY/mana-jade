@@ -9,15 +9,38 @@
   "config.jade.plugin_mana_jade.terra_plate_recipe_progress": "泰拉凝聚板配方进度",
 
   "config.jade.plugin_mana_jade.pure_daisy_recipe_progress": "白雏菊配方进度",
+  "config.jade.plugin_mana_jade.mana_star_info": "魔力星信息",
+
+  "config.jade.plugin_mana_jade.hydroangeas_info": "水绣球信息",
+  "config.jade.plugin_mana_jade.endoflame_info": "火红莲信息",
+  "config.jade.plugin_mana_jade.thermalily_info": "炽玫瑰信息",
+  "config.jade.plugin_mana_jade.rosa_arcana_info": "阿卡纳蔷薇信息",
+  "config.jade.plugin_mana_jade.munchdew_info": "咀叶花信息",
 
   "tooltip.mana_jade.mana_receiver_storage": "魔力: %d/%d",
   "tooltip.mana_jade.creative_mana_pool_storage": "魔力: ∞",
+
   "tooltip.mana_jade.mana_pool_catalyst": "催化器: %s",
   "tooltip.mana_jade.mana_spreader_burst_starting_mana": "脉冲初始魔力: %d",
   "tooltip.mana_jade.mana_spreader_burst_velocity": "脉冲速度: %s, %s, %s",
   "tooltip.mana_jade.mana_spreader_burst_ticks_before_mana_loss": "脉冲魔力开始流失前游戏刻: %d",
   "tooltip.mana_jade.mana_spreader_burst_mana_loss": "脉冲每游戏刻流失魔力: %d",
-  "tooltip.mana_jade.pure_daisy_recipe_progress": "%s配方进度: %d/%d s",
+
+  "tooltip.mana_jade.pure_daisy_recipe_progress": "%s配方进度: %s/%s s",
+  "tooltip.mana_jade.mana_star_info": "魔力: %s/s",
+
+  "tooltip.mana_jade.hydroangeas_mana_per_second": "魔力: %s/s",
+  "tooltip.mana_jade.hydroangeas_decay_time": "枯萎时间: %ss",
+  "tooltip.mana_jade.endoflame_mana_per_second": "魔力: %s/s",
+  "tooltip.mana_jade.endoflame_burn_time": "燃烧时间: %ss",
+  "tooltip.mana_jade.thermalily_mana_per_second": "魔力: %s/s",
+  "tooltip.mana_jade.thermalily_burn_time": "燃烧时间: %ss",
+  "tooltip.mana_jade.thermalily_cooldown_time": "冷却时间: %s/%ss",
+  "tooltip.mana_jade.rosa_arcana_mana_per_xp": "魔力: %d/经验值",
+  "tooltip.mana_jade.rosa_arcana_xp_per_second": "吸取玩家经验值: %d/s",
+  "tooltip.mana_jade.munchdew_mana_per_leaf": "魔力: %d/树叶",
+  "tooltip.mana_jade.munchdew_leaves_per_second": "树叶: %d/s",
+  "tooltip.mana_jade.munchdew_cooldown": "冷却时间: %s/%s",
 
   "tooltip.mana_jade.true": "是",
   "tooltip.mana_jade.false": "否",
