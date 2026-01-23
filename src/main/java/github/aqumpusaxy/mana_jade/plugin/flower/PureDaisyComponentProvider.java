@@ -1,8 +1,7 @@
 package github.aqumpusaxy.mana_jade.plugin.flower;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
-import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
-import github.aqumpusaxy.mana_jade.util.DecimalFormatUtil;
+import github.aqumpusaxy.mana_jade.util.calc.flora.misc.PureDaisyCalc;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -28,9 +27,9 @@ public enum PureDaisyComponentProvider implements IBlockComponentProvider, IServ
             tooltip.add(
                     Component.translatable(
                             "tooltip.mana_jade.pure_daisy_recipe_progress",
-                            Component.translatable(BotaniaFloraCalc.PureDaisyCalc.getDirKeys(i)),
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(timeRemaining),
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(timeRequired)
+                            Component.translatable(PureDaisyCalc.getDirKeys(i)),
+                            String.format("%.2f", timeRemaining),
+                            String.format("%.2f", timeRequired)
                     )
             );
         }
@@ -39,8 +38,8 @@ public enum PureDaisyComponentProvider implements IBlockComponentProvider, IServ
     @Override
     public void appendServerData(CompoundTag data, BlockAccessor accessor) {
         for (int i = 0; i < 8; i++) {
-            double timeRemaining = BotaniaFloraCalc.PureDaisyCalc.getSecondsRemaining(accessor)[i];
-            double timeRequired = BotaniaFloraCalc.PureDaisyCalc.getSecondsRequired(accessor)[i];
+            double timeRemaining = PureDaisyCalc.getSecondsRemaining(accessor)[i];
+            double timeRequired = PureDaisyCalc.getSecondsRequired(accessor)[i];
 
             if (timeRemaining <= 0) continue;
 

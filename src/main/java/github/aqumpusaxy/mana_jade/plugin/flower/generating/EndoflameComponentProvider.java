@@ -1,8 +1,7 @@
 package github.aqumpusaxy.mana_jade.plugin.flower.generating;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
-import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
-import github.aqumpusaxy.mana_jade.util.DecimalFormatUtil;
+import github.aqumpusaxy.mana_jade.util.calc.flora.generating.EndoflameCalc;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -22,7 +21,7 @@ public enum EndoflameComponentProvider implements IBlockComponentProvider, IServ
         if (data.contains("EndoflameManaPerSecond")) {
             tooltip.add(
                     Component.translatable("tooltip.mana_jade.endoflame_mana_per_second",
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("EndoflameManaPerSecond"))
+                            String.format("%.2f", data.getDouble("EndoflameManaPerSecond"))
                     )
             );
         }
@@ -30,7 +29,7 @@ public enum EndoflameComponentProvider implements IBlockComponentProvider, IServ
         if (data.contains("EndoflameBurnTime")) {
             tooltip.add(
                     Component.translatable("tooltip.mana_jade.endoflame_burn_time",
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("EndoflameBurnTime"))
+                            String.format("%.2f", data.getDouble("EndoflameBurnTime"))
                     )
             );
         }
@@ -41,13 +40,13 @@ public enum EndoflameComponentProvider implements IBlockComponentProvider, IServ
         //每秒魔力产出
         data.putDouble(
                 "EndoflameManaPerSecond",
-                BotaniaFloraCalc.EndoflameCalc.getEndoflameManaPerSecond(accessor)
+                EndoflameCalc.getEndoflameManaPerSecond(accessor)
         );
 
         //燃烧时间
         data.putDouble(
                 "EndoflameBurnTime",
-                BotaniaFloraCalc.EndoflameCalc.getEndoflameBurnTime(accessor)
+                EndoflameCalc.getEndoflameBurnTime(accessor)
         );
     }
 

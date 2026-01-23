@@ -1,7 +1,7 @@
 package github.aqumpusaxy.mana_jade.plugin.flower.generating;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
-import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
+import github.aqumpusaxy.mana_jade.util.calc.flora.generating.RosaArcanaCalc;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -40,13 +40,13 @@ public enum RosaArcanaComponentProvider implements IBlockComponentProvider, ISer
         //每经验转换魔力
         data.putInt(
                 "RosaArcanaManaPerXp",
-                BotaniaFloraCalc.RosaArcanaCalc.getRosaArcanaManaPerXp(accessor)
+                RosaArcanaCalc.getRosaArcanaManaPerXp(accessor)
         );
 
         //每秒吸收玩家经验
         data.putInt(
                 "RosaArcanaXpPerSecond",
-                BotaniaFloraCalc.RosaArcanaCalc.getRosaArcanaXpPerSecond(accessor)
+                RosaArcanaCalc.getRosaArcanaXpPerSecond(accessor)
         );
     }
 

@@ -1,8 +1,7 @@
 package github.aqumpusaxy.mana_jade.plugin.flower.generating;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
-import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
-import github.aqumpusaxy.mana_jade.util.DecimalFormatUtil;
+import github.aqumpusaxy.mana_jade.util.calc.flora.generating.FluidGeneratorCalc;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -22,7 +21,7 @@ public enum HydroangeasComponentProvider implements IBlockComponentProvider, ISe
         if (data.contains("HydroangeasManaPerSecond")) {
             tooltip.add(
                     Component.translatable("tooltip.mana_jade.hydroangeas_mana_per_second",
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("HydroangeasManaPerSecond"))
+                            String.format("%.2f", data.getDouble("HydroangeasManaPerSecond"))
                     )
             );
         }
@@ -30,7 +29,7 @@ public enum HydroangeasComponentProvider implements IBlockComponentProvider, ISe
         if (data.contains("HydroangeasDecayTime")) {
             tooltip.add(
                     Component.translatable("tooltip.mana_jade.hydroangeas_decay_time",
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("HydroangeasDecayTime"))
+                            String.format("%.2f", data.getDouble("HydroangeasDecayTime"))
                     )
             );
         }
@@ -41,13 +40,13 @@ public enum HydroangeasComponentProvider implements IBlockComponentProvider, ISe
         //每秒魔力产出
         data.putDouble(
                 "HydroangeasManaPerSecond",
-                BotaniaFloraCalc.FluidGeneratorCalc.getFluidGeneratorManaPerSecond(accessor)
+                FluidGeneratorCalc.getFluidGeneratorManaPerSecond(accessor)
         );
 
         //枯萎时间
         data.putDouble(
                 "HydroangeasDecayTime",
-                BotaniaFloraCalc.FluidGeneratorCalc.getHydroangeasDecayTime(accessor)
+                FluidGeneratorCalc.getHydroangeasDecayTime(accessor)
         );
     }
 

@@ -1,8 +1,7 @@
 package github.aqumpusaxy.mana_jade.plugin.flower.generating;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
-import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
-import github.aqumpusaxy.mana_jade.util.DecimalFormatUtil;
+import github.aqumpusaxy.mana_jade.util.calc.flora.generating.FluidGeneratorCalc;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -22,7 +21,7 @@ public enum ThermalilyComponentProvider implements IBlockComponentProvider, ISer
         if (data.contains("ThermalilyManaPerSecond")) {
             tooltip.add(
                     Component.translatable("tooltip.mana_jade.thermalily_mana_per_second",
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("ThermalilyManaPerSecond"))
+                            String.format("%.2f", data.getDouble("ThermalilyManaPerSecond"))
                     )
             );
         }
@@ -30,14 +29,14 @@ public enum ThermalilyComponentProvider implements IBlockComponentProvider, ISer
         if (data.contains("ThermalilyBurnTime")) {
             tooltip.add(
                     Component.translatable("tooltip.mana_jade.thermalily_burn_time",
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("ThermalilyBurnTime"))
+                            String.format("%.2f", data.getDouble("ThermalilyBurnTime"))
                     )
             );
         } else if (data.contains("ThermalilyCooldown") && data.contains("ThermalilyCooldownTime")) {
             tooltip.add(
                     Component.translatable("tooltip.mana_jade.thermalily_cooldown_time",
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("ThermalilyCooldown")),
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("ThermalilyCooldownTime"))
+                            String.format("%.2f", data.getDouble("ThermalilyCooldown")),
+                            String.format("%.2f", data.getDouble("ThermalilyCooldownTime"))
                     )
             );
         }
@@ -46,23 +45,23 @@ public enum ThermalilyComponentProvider implements IBlockComponentProvider, ISer
     @Override
     public void appendServerData(CompoundTag data, BlockAccessor accessor) {
         //每秒魔力产出
-        data.putDouble("ThermalilyManaPerSecond", BotaniaFloraCalc.FluidGeneratorCalc.getFluidGeneratorManaPerSecond(accessor));
+        data.putDouble("ThermalilyManaPerSecond", FluidGeneratorCalc.getFluidGeneratorManaPerSecond(accessor));
 
         //燃烧时间和冷却时间
-        double burnTime = BotaniaFloraCalc.FluidGeneratorCalc.getFluidGeneratorBurnTime(accessor);
-        double cooldownTime = BotaniaFloraCalc.FluidGeneratorCalc.getFluidGeneratorCooldown(accessor);
+        double burnTime = FluidGeneratorCalc.getFluidGeneratorBurnTime(accessor);
+        double cooldownTime = FluidGeneratorCalc.getFluidGeneratorCooldown(accessor);
 
         if (burnTime > 0) {
             data.putDouble("ThermalilyBurnTime", burnTime);
         } else if (cooldownTime > 0) {
             data.putDouble(
                     "ThermalilyCooldown",
-                    BotaniaFloraCalc.FluidGeneratorCalc.getFluidGeneratorCooldown(accessor)
+                    FluidGeneratorCalc.getFluidGeneratorCooldown(accessor)
             );
 
             data.putDouble(
                     "ThermalilyCooldownTime",
-                    BotaniaFloraCalc.FluidGeneratorCalc.getFluidGeneratorCooldownTime(accessor)
+                    FluidGeneratorCalc.getFluidGeneratorCooldownTime(accessor)
             );
         }
     }

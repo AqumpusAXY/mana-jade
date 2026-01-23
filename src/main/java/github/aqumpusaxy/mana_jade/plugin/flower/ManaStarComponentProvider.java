@@ -1,9 +1,8 @@
 package github.aqumpusaxy.mana_jade.plugin.flower;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
-import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
 import github.aqumpusaxy.mana_jade.util.ColorUtil;
-import github.aqumpusaxy.mana_jade.util.DecimalFormatUtil;
+import github.aqumpusaxy.mana_jade.util.calc.flora.misc.ManaStarCalc;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -31,7 +30,7 @@ public enum ManaStarComponentProvider implements IBlockComponentProvider, IServe
         tooltip.add(
                 Component.translatable(
                                 "tooltip.mana_jade.mana_star_info",
-                                DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(deltaMana)
+                                String.format("%.2f", deltaMana)
                         )
                         .withStyle(Style.EMPTY.withColor(hexColor))
         );
@@ -39,7 +38,7 @@ public enum ManaStarComponentProvider implements IBlockComponentProvider, IServe
 
     @Override
     public void appendServerData(CompoundTag data, BlockAccessor accessor) {
-        double deltaMana = BotaniaFloraCalc.ManaStarCalc.getDeltaMana(accessor);
+        double deltaMana = ManaStarCalc.getDeltaMana(accessor);
 
         if (deltaMana == 0) return;
 

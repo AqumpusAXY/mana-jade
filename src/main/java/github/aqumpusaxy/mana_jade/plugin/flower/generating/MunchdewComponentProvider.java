@@ -1,8 +1,7 @@
 package github.aqumpusaxy.mana_jade.plugin.flower.generating;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
-import github.aqumpusaxy.mana_jade.util.BotaniaFloraCalc;
-import github.aqumpusaxy.mana_jade.util.DecimalFormatUtil;
+import github.aqumpusaxy.mana_jade.util.calc.flora.generating.MunchdewCalc;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -38,8 +37,8 @@ public enum MunchdewComponentProvider implements IBlockComponentProvider, IServe
         if (data.contains("MunchdewCooldown")) {
             tooltip.add(
                     Component.translatable("tooltip.mana_jade.munchdew_cooldown",
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("MunchdewCooldown")),
-                            DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(data.getDouble("MunchdewCooldownPercent"))
+                            String.format("%.2f", data.getDouble("MunchdewCooldown")),
+                            String.format("%.2f", data.getDouble("MunchdewCooldownPercent"))
                     )
             );
         }
@@ -50,18 +49,18 @@ public enum MunchdewComponentProvider implements IBlockComponentProvider, IServe
         //每树叶转换魔力
         data.putInt(
                 "MunchdewManaPerLeaf",
-                BotaniaFloraCalc.MunchdewCalc.getMunchdewManaPerLeaf()
+                MunchdewCalc.getMunchdewManaPerLeaf()
         );
 
         //每秒破坏树叶
         data.putInt(
                 "MunchdewLeavesPerSecond",
-                BotaniaFloraCalc.MunchdewCalc.getMunchdewLeavesPerSecond(accessor)
+                MunchdewCalc.getMunchdewLeavesPerSecond(accessor)
         );
 
         //冷却时间
-        double cooldown = BotaniaFloraCalc.MunchdewCalc.getMunchdewCooldown(accessor);
-        double cooldownTime = BotaniaFloraCalc.MunchdewCalc.getMunchdewCooldownTime(accessor);
+        double cooldown = MunchdewCalc.getMunchdewCooldown(accessor);
+        double cooldownTime = MunchdewCalc.getMunchdewCooldownTime(accessor);
         if (cooldown > 0) {
             data.putDouble("MunchdewCooldown", cooldown);
             data.putDouble("MunchdewCooldownPercent", cooldownTime);
