@@ -2,6 +2,7 @@ package github.aqumpusaxy.mana_jade.plugin.flower;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import github.aqumpusaxy.mana_jade.util.ColorUtil;
+import github.aqumpusaxy.mana_jade.util.NumberFormatter;
 import github.aqumpusaxy.mana_jade.util.calc.flora.misc.ManaStarCalc;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -30,7 +31,7 @@ public enum ManaStarComponentProvider implements IBlockComponentProvider, IServe
         tooltip.add(
                 Component.translatable(
                                 "tooltip.mana_jade.mana_star_info",
-                                String.format("%.2f", deltaMana)
+                                NumberFormatter.formatDouble(deltaMana)
                         )
                         .withStyle(Style.EMPTY.withColor(hexColor))
         );

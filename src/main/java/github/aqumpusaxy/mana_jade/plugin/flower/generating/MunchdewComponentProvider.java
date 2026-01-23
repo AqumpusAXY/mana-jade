@@ -1,6 +1,7 @@
 package github.aqumpusaxy.mana_jade.plugin.flower.generating;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
+import github.aqumpusaxy.mana_jade.util.NumberFormatter;
 import github.aqumpusaxy.mana_jade.util.calc.flora.generating.MunchdewCalc;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -20,7 +21,8 @@ public enum MunchdewComponentProvider implements IBlockComponentProvider, IServe
 
         if (data.contains("MunchdewManaPerLeaf")) {
             tooltip.add(
-                    Component.translatable("tooltip.mana_jade.munchdew_mana_per_leaf",
+                    Component.translatable(
+                            "tooltip.mana_jade.munchdew_mana_per_leaf",
                             data.getInt("MunchdewManaPerLeaf")
                     )
             );
@@ -28,7 +30,8 @@ public enum MunchdewComponentProvider implements IBlockComponentProvider, IServe
 
         if (data.contains("MunchdewLeavesPerSecond")) {
             tooltip.add(
-                    Component.translatable("tooltip.mana_jade.munchdew_leaves_per_second",
+                    Component.translatable(
+                            "tooltip.mana_jade.munchdew_leaves_per_second",
                             data.getInt("MunchdewLeavesPerSecond")
                     )
             );
@@ -37,8 +40,8 @@ public enum MunchdewComponentProvider implements IBlockComponentProvider, IServe
         if (data.contains("MunchdewCooldown")) {
             tooltip.add(
                     Component.translatable("tooltip.mana_jade.munchdew_cooldown",
-                            String.format("%.2f", data.getDouble("MunchdewCooldown")),
-                            String.format("%.2f", data.getDouble("MunchdewCooldownPercent"))
+                            NumberFormatter.formatDouble(data.getDouble("MunchdewCooldown")),
+                            NumberFormatter.formatDouble(data.getDouble("MunchdewCooldownPercent"))
                     )
             );
         }

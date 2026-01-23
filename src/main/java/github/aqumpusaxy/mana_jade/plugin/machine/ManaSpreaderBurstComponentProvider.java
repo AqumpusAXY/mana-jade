@@ -2,6 +2,7 @@ package github.aqumpusaxy.mana_jade.plugin.machine;
 
 import github.aqumpusaxy.mana_jade.mixin.ManaSpreaderGetBurstInvoker;
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
+import github.aqumpusaxy.mana_jade.util.NumberFormatter;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -20,23 +21,35 @@ public enum ManaSpreaderBurstComponentProvider implements IBlockComponentProvide
     @Override
     public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
         if (accessor.getServerData().contains("BurstStartingMana")) {
-            tooltip.add(Component.translatable("tooltip.mana_jade.mana_spreader_burst_starting_mana",
-                    accessor.getServerData().getInt("BurstStartingMana")
-            ));
+            tooltip.add(
+                    Component.translatable(
+                            "tooltip.mana_jade.mana_spreader_burst_starting_mana",
+                            accessor.getServerData().getInt("BurstStartingMana")
+                    )
+            );
 
-            tooltip.add(Component.translatable("tooltip.mana_jade.mana_spreader_burst_velocity",
-                    String.format("%.2f", accessor.getServerData().getDouble("BurstVelocityX")),
-                    String.format("%.2f", accessor.getServerData().getDouble("BurstVelocityY")),
-                    String.format("%.2f", accessor.getServerData().getDouble("BurstVelocityZ"))
-            ));
+            tooltip.add(
+                    Component.translatable(
+                            "tooltip.mana_jade.mana_spreader_burst_velocity",
+                            NumberFormatter.formatDouble(accessor.getServerData().getDouble("BurstVelocityX")),
+                            NumberFormatter.formatDouble(accessor.getServerData().getDouble("BurstVelocityY")),
+                            NumberFormatter.formatDouble(accessor.getServerData().getDouble("BurstVelocityZ"))
+                    )
+            );
 
-            tooltip.add(Component.translatable("tooltip.mana_jade.mana_spreader_burst_ticks_before_mana_loss",
-                    accessor.getServerData().getInt("BurstTicksBeforeManaLoss")
-            ));
+            tooltip.add(
+                    Component.translatable(
+                            "tooltip.mana_jade.mana_spreader_burst_ticks_before_mana_loss",
+                            accessor.getServerData().getInt("BurstTicksBeforeManaLoss")
+                    )
+            );
 
-            tooltip.add(Component.translatable("tooltip.mana_jade.mana_spreader_burst_mana_loss",
-                    accessor.getServerData().getFloat("BurstManaLossPerTick")
-            ));
+            tooltip.add(
+                    Component.translatable(
+                            "tooltip.mana_jade.mana_spreader_burst_mana_loss",
+                            accessor.getServerData().getFloat("BurstManaLossPerTick")
+                    )
+            );
         }
     }
 

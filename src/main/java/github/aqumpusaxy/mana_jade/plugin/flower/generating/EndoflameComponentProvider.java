@@ -1,6 +1,7 @@
 package github.aqumpusaxy.mana_jade.plugin.flower.generating;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
+import github.aqumpusaxy.mana_jade.util.NumberFormatter;
 import github.aqumpusaxy.mana_jade.util.calc.flora.generating.EndoflameCalc;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -20,16 +21,18 @@ public enum EndoflameComponentProvider implements IBlockComponentProvider, IServ
 
         if (data.contains("EndoflameManaPerSecond")) {
             tooltip.add(
-                    Component.translatable("tooltip.mana_jade.endoflame_mana_per_second",
-                            String.format("%.2f", data.getDouble("EndoflameManaPerSecond"))
+                    Component.translatable(
+                            "tooltip.mana_jade.endoflame_mana_per_second",
+                            NumberFormatter.formatDouble(data.getDouble("EndoflameManaPerSecond"))
                     )
             );
         }
 
         if (data.contains("EndoflameBurnTime")) {
             tooltip.add(
-                    Component.translatable("tooltip.mana_jade.endoflame_burn_time",
-                            String.format("%.2f", data.getDouble("EndoflameBurnTime"))
+                    Component.translatable(
+                            "tooltip.mana_jade.endoflame_burn_time",
+                            NumberFormatter.formatDouble(data.getDouble("EndoflameBurnTime"))
                     )
             );
         }

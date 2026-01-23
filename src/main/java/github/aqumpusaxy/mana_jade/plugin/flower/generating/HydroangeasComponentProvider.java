@@ -1,6 +1,7 @@
 package github.aqumpusaxy.mana_jade.plugin.flower.generating;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
+import github.aqumpusaxy.mana_jade.util.NumberFormatter;
 import github.aqumpusaxy.mana_jade.util.calc.flora.generating.FluidGeneratorCalc;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -20,16 +21,18 @@ public enum HydroangeasComponentProvider implements IBlockComponentProvider, ISe
 
         if (data.contains("HydroangeasManaPerSecond")) {
             tooltip.add(
-                    Component.translatable("tooltip.mana_jade.hydroangeas_mana_per_second",
-                            String.format("%.2f", data.getDouble("HydroangeasManaPerSecond"))
+                    Component.translatable(
+                            "tooltip.mana_jade.hydroangeas_mana_per_second",
+                            NumberFormatter.formatDouble(data.getDouble("HydroangeasManaPerSecond"))
                     )
             );
         }
 
         if (data.contains("HydroangeasDecayTime")) {
             tooltip.add(
-                    Component.translatable("tooltip.mana_jade.hydroangeas_decay_time",
-                            String.format("%.2f", data.getDouble("HydroangeasDecayTime"))
+                    Component.translatable(
+                            "tooltip.mana_jade.hydroangeas_decay_time",
+                            NumberFormatter.formatDouble(data.getDouble("HydroangeasDecayTime"))
                     )
             );
         }

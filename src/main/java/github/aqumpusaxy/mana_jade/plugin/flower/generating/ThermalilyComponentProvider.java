@@ -1,6 +1,7 @@
 package github.aqumpusaxy.mana_jade.plugin.flower.generating;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
+import github.aqumpusaxy.mana_jade.util.NumberFormatter;
 import github.aqumpusaxy.mana_jade.util.calc.flora.generating.FluidGeneratorCalc;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -20,23 +21,26 @@ public enum ThermalilyComponentProvider implements IBlockComponentProvider, ISer
 
         if (data.contains("ThermalilyManaPerSecond")) {
             tooltip.add(
-                    Component.translatable("tooltip.mana_jade.thermalily_mana_per_second",
-                            String.format("%.2f", data.getDouble("ThermalilyManaPerSecond"))
+                    Component.translatable(
+                            "tooltip.mana_jade.thermalily_mana_per_second",
+                            NumberFormatter.formatDouble(data.getDouble("ThermalilyManaPerSecond"))
                     )
             );
         }
 
         if (data.contains("ThermalilyBurnTime")) {
             tooltip.add(
-                    Component.translatable("tooltip.mana_jade.thermalily_burn_time",
-                            String.format("%.2f", data.getDouble("ThermalilyBurnTime"))
+                    Component.translatable(
+                            "tooltip.mana_jade.thermalily_burn_time",
+                            NumberFormatter.formatDouble(data.getDouble("ThermalilyBurnTime"))
                     )
             );
         } else if (data.contains("ThermalilyCooldown") && data.contains("ThermalilyCooldownTime")) {
             tooltip.add(
-                    Component.translatable("tooltip.mana_jade.thermalily_cooldown_time",
-                            String.format("%.2f", data.getDouble("ThermalilyCooldown")),
-                            String.format("%.2f", data.getDouble("ThermalilyCooldownTime"))
+                    Component.translatable(
+                            "tooltip.mana_jade.thermalily_cooldown_time",
+                            NumberFormatter.formatDouble(data.getDouble("ThermalilyCooldown")),
+                            NumberFormatter.formatDouble(data.getDouble("ThermalilyCooldownTime"))
                     )
             );
         }

@@ -20,7 +20,8 @@ public enum RosaArcanaComponentProvider implements IBlockComponentProvider, ISer
 
         if (data.contains("RosaArcanaManaPerXp")) {
             tooltip.add(
-                    Component.translatable("tooltip.mana_jade.rosa_arcana_mana_per_xp",
+                    Component.translatable(
+                            "tooltip.mana_jade.rosa_arcana_mana_per_xp",
                             data.getInt("RosaArcanaManaPerXp")
                     )
             );
@@ -28,7 +29,8 @@ public enum RosaArcanaComponentProvider implements IBlockComponentProvider, ISer
 
         if (data.contains("RosaArcanaXpPerSecond")) {
             tooltip.add(
-                    Component.translatable("tooltip.mana_jade.rosa_arcana_xp_per_second",
+                    Component.translatable(
+                            "tooltip.mana_jade.rosa_arcana_xp_per_second",
                             data.getInt("RosaArcanaXpPerSecond")
                     )
             );

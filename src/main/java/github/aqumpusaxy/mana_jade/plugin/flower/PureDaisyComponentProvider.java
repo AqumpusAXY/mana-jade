@@ -1,6 +1,7 @@
 package github.aqumpusaxy.mana_jade.plugin.flower;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
+import github.aqumpusaxy.mana_jade.util.NumberFormatter;
 import github.aqumpusaxy.mana_jade.util.calc.flora.misc.PureDaisyCalc;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -28,8 +29,8 @@ public enum PureDaisyComponentProvider implements IBlockComponentProvider, IServ
                     Component.translatable(
                             "tooltip.mana_jade.pure_daisy_recipe_progress",
                             Component.translatable(PureDaisyCalc.getDirKeys(i)),
-                            String.format("%.2f", timeRemaining),
-                            String.format("%.2f", timeRequired)
+                            NumberFormatter.formatDouble(timeRemaining),
+                            NumberFormatter.formatDouble(timeRequired)
                     )
             );
         }
