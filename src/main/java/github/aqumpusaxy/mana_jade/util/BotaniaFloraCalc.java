@@ -11,6 +11,7 @@ import vazkii.botania.common.block.flower.PureDaisyBlockEntity;
 import vazkii.botania.common.block.flower.generating.*;
 
 public class BotaniaFloraCalc {
+    //TODO:拆分成多个独立的类
     public static class PureDaisyCalc {
         private static final String[] DIR_KEYS = {
                 "tooltip.mana_jade.direction.northwest",
