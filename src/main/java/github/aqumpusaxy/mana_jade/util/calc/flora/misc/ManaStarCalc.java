@@ -4,7 +4,7 @@ import github.aqumpusaxy.mana_jade.invoker.ManaStarDeltaManaInvoker;
 import snownee.jade.api.BlockAccessor;
 import vazkii.botania.common.block.flower.ManastarBlockEntity;
 
-import static github.aqumpusaxy.mana_jade.util.calc.flora.misc.CommonFloraCalc.isBoosted;
+import static github.aqumpusaxy.mana_jade.util.calc.flora.CommonFloraCalc.isBoosted;
 
 public class ManaStarCalc {
     private static final double UPDATE_DELAY_SECONDS = 3D;

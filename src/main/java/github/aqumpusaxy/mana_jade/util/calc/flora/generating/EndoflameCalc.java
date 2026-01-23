@@ -4,8 +4,8 @@ import github.aqumpusaxy.mana_jade.mixin.generator.EndoflameBurnTimeAccessor;
 import snownee.jade.api.BlockAccessor;
 import vazkii.botania.common.block.flower.generating.EndoflameBlockEntity;
 
-import static github.aqumpusaxy.mana_jade.util.calc.flora.misc.CommonFloraCalc.ticksToSeconds;
-import static github.aqumpusaxy.mana_jade.util.calc.flora.misc.CommonFloraCalc.isBoosted;
+import static github.aqumpusaxy.mana_jade.util.calc.flora.CommonFloraCalc.ticksToSeconds;
+import static github.aqumpusaxy.mana_jade.util.calc.flora.CommonFloraCalc.isBoosted;
 
 public class EndoflameCalc {
     private static final int MANA_PER_TICK = 3;

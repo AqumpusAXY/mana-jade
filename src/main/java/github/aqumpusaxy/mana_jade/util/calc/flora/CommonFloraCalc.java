@@ -1,6 +1,5 @@
-package github.aqumpusaxy.mana_jade.util.calc.flora.misc;
+package github.aqumpusaxy.mana_jade.util.calc.flora;
 
-import snownee.jade.api.BlockAccessor;
 import vazkii.botania.api.block_entity.SpecialFlowerBlockEntity;
 
 public class CommonFloraCalc {

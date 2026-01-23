@@ -5,8 +5,7 @@ import github.aqumpusaxy.mana_jade.mixin.PureDaisyTicksRemainingAccessor;
 import snownee.jade.api.BlockAccessor;
 import vazkii.botania.common.block.flower.PureDaisyBlockEntity;
 
-import static github.aqumpusaxy.mana_jade.util.calc.flora.misc.CommonFloraCalc.ticksToSeconds;
-import static github.aqumpusaxy.mana_jade.util.calc.flora.misc.CommonFloraCalc.isBoosted;
+import static github.aqumpusaxy.mana_jade.util.calc.flora.CommonFloraCalc.ticksToSeconds;
 
 public class PureDaisyCalc {
     private static final String[] DIR_KEYS = {
