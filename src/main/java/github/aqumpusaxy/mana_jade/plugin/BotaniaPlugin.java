@@ -64,6 +64,8 @@ public class BotaniaPlugin implements IWailaPlugin {
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "rosa_arcana_info");
     public static final ResourceLocation MUNCHDEW_INFO =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "munchdew_info");
+    public static final ResourceLocation ENTROPINNYUM_INFO =
+            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "entropinnyum_info");
 
     @Override
     public void register(IWailaCommonRegistration registration) {
@@ -103,6 +105,7 @@ public class BotaniaPlugin implements IWailaPlugin {
         registration.registerBlockComponent(ThermalilyComponentProvider.INSTANCE, FlowerBlock.class);
         registration.registerBlockComponent(RosaArcanaComponentProvider.INSTANCE, FlowerBlock.class);
         registration.registerBlockComponent(MunchdewComponentProvider.INSTANCE, FlowerBlock.class);
+        registration.registerBlockComponent(EntropinnyumComponentProvider.INSTANCE, FlowerBlock.class);
 
         registration.registerBlockComponent(PureDaisyComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
         registration.registerBlockComponent(ManaStarComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
@@ -111,5 +114,6 @@ public class BotaniaPlugin implements IWailaPlugin {
         registration.registerBlockComponent(ThermalilyComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
         registration.registerBlockComponent(RosaArcanaComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
         registration.registerBlockComponent(MunchdewComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
+        registration.registerBlockComponent(EntropinnyumComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
     }
 }

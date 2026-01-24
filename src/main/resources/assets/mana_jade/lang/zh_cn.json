@@ -16,6 +16,7 @@
   "config.jade.plugin_mana_jade.thermalily_info": "炽玫瑰信息",
   "config.jade.plugin_mana_jade.rosa_arcana_info": "阿卡纳蔷薇信息",
   "config.jade.plugin_mana_jade.munchdew_info": "咀叶花信息",
+  "config.jade.plugin_mana_jade.entropinnyum_info": "热爆花信息",
 
   "tooltip.mana_jade.mana_receiver_storage": "魔力: %d/%d",
   "tooltip.mana_jade.creative_mana_pool_storage": "魔力: ∞",
@@ -41,6 +42,7 @@
   "tooltip.mana_jade.munchdew_mana_per_leaf": "魔力: %d/树叶",
   "tooltip.mana_jade.munchdew_leaves_per_second": "树叶: %d/s",
   "tooltip.mana_jade.munchdew_cooldown": "冷却时间: %s/%s",
+  "tooltip.mana_jade.entropinnyum_can_absorb_explosion": "可吸收爆炸: %s",
 
   "tooltip.mana_jade.true": "是",
   "tooltip.mana_jade.false": "否",
