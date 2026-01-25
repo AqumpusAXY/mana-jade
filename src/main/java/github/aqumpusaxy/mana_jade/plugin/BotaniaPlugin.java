@@ -67,6 +67,10 @@ public class BotaniaPlugin implements IWailaPlugin {
     public static final ResourceLocation ENTROPINNYUM_INFO =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "entropinnyum_info");
 
+    public static final ResourceLocation[] CLIENT_FEATURES = {
+            MANA_POOL_CATALYST
+    };
+
     @Override
     public void register(IWailaCommonRegistration registration) {
         registration.registerBlockDataProvider(ManaPoolComponentProvider.INSTANCE, ManaPoolBlockEntity.class);
@@ -115,5 +119,13 @@ public class BotaniaPlugin implements IWailaPlugin {
         registration.registerBlockComponent(RosaArcanaComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
         registration.registerBlockComponent(MunchdewComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
         registration.registerBlockComponent(EntropinnyumComponentProvider.INSTANCE, FloatingSpecialFlowerBlock.class);
+
+        markClientFeatures(registration);
+    }
+
+    private static void markClientFeatures(IWailaClientRegistration registration) {
+        for (ResourceLocation feature : CLIENT_FEATURES) {
+            registration.markAsClientFeature(feature);
+        }
     }
 }
