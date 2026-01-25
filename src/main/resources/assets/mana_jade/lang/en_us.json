@@ -1,4 +1,6 @@
 {
+  "config.jade.plugin_mana_jade.special_flora_info": "Special Flora Info",
+
   "config.jade.plugin_mana_jade.mana_pool_storage": "Mana Pool Storage",
   "config.jade.plugin_mana_jade.mana_spreader_storage": "Mana Spreader Storage",
   "config.jade.plugin_mana_jade.special_flora_storage": "Flora Storage",

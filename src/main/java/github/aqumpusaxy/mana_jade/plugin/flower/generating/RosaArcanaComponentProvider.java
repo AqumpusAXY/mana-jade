@@ -13,7 +13,7 @@ import snownee.jade.api.config.IPluginConfig;
 
 public enum RosaArcanaComponentProvider implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
     INSTANCE;
-
+    //TODO: 该Provider改为纯客户端功能
     @Override
     public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
         CompoundTag data = accessor.getServerData();

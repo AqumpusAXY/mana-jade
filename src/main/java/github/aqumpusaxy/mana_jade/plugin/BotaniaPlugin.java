@@ -33,6 +33,10 @@ import vazkii.botania.common.block.mana.TerrestrialAgglomerationPlateBlock;
 
 @WailaPlugin
 public class BotaniaPlugin implements IWailaPlugin {
+    //TODO: 字段全部拆到Identifier类里
+    public static final ResourceLocation SPECIAL_FLORA_INFO =
+            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "special_flora_info");
+
     public static final ResourceLocation MANA_POOL_STORAGE =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "mana_pool_storage");
     public static final ResourceLocation MANA_SPREADER_STORAGE =
@@ -73,6 +77,7 @@ public class BotaniaPlugin implements IWailaPlugin {
 
     @Override
     public void register(IWailaCommonRegistration registration) {
+        //TODO: 同下
         registration.registerBlockDataProvider(ManaPoolComponentProvider.INSTANCE, ManaPoolBlockEntity.class);
         registration.registerBlockDataProvider(ManaSpreaderComponentProvider.INSTANCE, ManaSpreaderBlockEntity.class);
         registration.registerBlockDataProvider(SpecialFlowerComponentProvider.INSTANCE, BindableSpecialFlowerBlockEntity.class);
@@ -92,6 +97,10 @@ public class BotaniaPlugin implements IWailaPlugin {
 
     @Override
     public void registerClient(IWailaClientRegistration registration) {
+        //TODO: 添加分类的配置项
+        registration.addConfig(SPECIAL_FLORA_INFO, true);
+
+        //TODO: 同类的Component抽成单个private方法
         registration.registerBlockComponent(ManaPoolComponentProvider.INSTANCE, ManaPoolBlock.class);
         registration.registerBlockComponent(ManaSpreaderComponentProvider.INSTANCE, ManaSpreaderBlock.class);
         registration.registerBlockComponent(SpecialFlowerComponentProvider.INSTANCE, FlowerBlock.class);
