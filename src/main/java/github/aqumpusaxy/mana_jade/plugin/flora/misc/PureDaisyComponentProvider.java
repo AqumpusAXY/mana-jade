@@ -1,6 +1,6 @@
-package github.aqumpusaxy.mana_jade.plugin.flower;
+package github.aqumpusaxy.mana_jade.plugin.flora.misc;
 
-import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
+import github.aqumpusaxy.mana_jade.plugin.Identifiers;
 import github.aqumpusaxy.mana_jade.util.NumberFormatter;
 import github.aqumpusaxy.mana_jade.util.calc.flora.misc.PureDaisyCalc;
 import net.minecraft.nbt.CompoundTag;
@@ -17,6 +17,8 @@ public enum PureDaisyComponentProvider implements IBlockComponentProvider, IServ
 
     @Override
     public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
+        if (!config.get(Identifiers.MISC_FLORA_INFO)) return;
+
         CompoundTag data = accessor.getServerData();
 
         for (int i = 0; i < 8; i++) {
@@ -58,6 +60,6 @@ public enum PureDaisyComponentProvider implements IBlockComponentProvider, IServ
 
     @Override
     public ResourceLocation getUid() {
-        return BotaniaPlugin.PURE_DAISY_RECIPE_PROGRESS;
+        return Identifiers.PURE_DAISY_INFO;
     }
 }

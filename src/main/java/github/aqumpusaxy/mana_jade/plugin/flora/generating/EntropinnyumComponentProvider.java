@@ -1,4 +1,4 @@
-package github.aqumpusaxy.mana_jade.plugin.flower.generating;
+package github.aqumpusaxy.mana_jade.plugin.flora.generating;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import net.minecraft.nbt.CompoundTag;

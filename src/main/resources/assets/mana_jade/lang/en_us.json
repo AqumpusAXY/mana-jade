@@ -1,5 +1,5 @@
 {
-  "config.jade.plugin_mana_jade.special_flora_info": "Special Flora Info",
+  "config.jade.plugin_mana_jade.misc_flora_info": "Misc Flora Info",
 
   "config.jade.plugin_mana_jade.mana_pool_storage": "Mana Pool Storage",
   "config.jade.plugin_mana_jade.mana_spreader_storage": "Mana Spreader Storage",
@@ -10,8 +10,8 @@
   "config.jade.plugin_mana_jade.runic_altar_recipe_progress": "Runic Altar Recipe Progress",
   "config.jade.plugin_mana_jade.terra_plate_recipe_progress": "Terra Plate Recipe Progress",
 
-  "config.jade.plugin_mana_jade.pure_daisy_recipe_progress": "Pure Daisy Recipe Progress",
-  "config.jade.plugin_mana_jade.mana_star_info": "Mana Star Info",
+  "config.jade.plugin_mana_jade.misc_flora_info.pure_daisy_info": "Pure Daisy Info",
+  "config.jade.plugin_mana_jade.misc_flora_info.mana_star_info": "Mana Star Info",
 
   "config.jade.plugin_mana_jade.hydroangeas_info": "Hydroangeas Info",
   "config.jade.plugin_mana_jade.endoflame_info": "Endoflame Info",

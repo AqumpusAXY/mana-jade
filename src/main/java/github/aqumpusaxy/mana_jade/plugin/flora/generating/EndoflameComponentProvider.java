@@ -1,8 +1,8 @@
-package github.aqumpusaxy.mana_jade.plugin.flower.generating;
+package github.aqumpusaxy.mana_jade.plugin.flora.generating;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
 import github.aqumpusaxy.mana_jade.util.NumberFormatter;
-import github.aqumpusaxy.mana_jade.util.calc.flora.generating.FluidGeneratorCalc;
+import github.aqumpusaxy.mana_jade.util.calc.flora.generating.EndoflameCalc;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -12,27 +12,27 @@ import snownee.jade.api.IServerDataProvider;
 import snownee.jade.api.ITooltip;
 import snownee.jade.api.config.IPluginConfig;
 
-public enum HydroangeasComponentProvider implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
+public enum EndoflameComponentProvider implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
     INSTANCE;
 
     @Override
     public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
         CompoundTag data = accessor.getServerData();
 
-        if (data.contains("HydroangeasManaPerSecond")) {
+        if (data.contains("EndoflameManaPerSecond")) {
             tooltip.add(
                     Component.translatable(
-                            "tooltip.mana_jade.hydroangeas_mana_per_second",
-                            NumberFormatter.formatDouble(data.getDouble("HydroangeasManaPerSecond"))
+                            "tooltip.mana_jade.endoflame_mana_per_second",
+                            NumberFormatter.formatDouble(data.getDouble("EndoflameManaPerSecond"))
                     )
             );
         }
 
-        if (data.contains("HydroangeasDecayTime")) {
+        if (data.contains("EndoflameBurnTime")) {
             tooltip.add(
                     Component.translatable(
-                            "tooltip.mana_jade.hydroangeas_decay_time",
-                            NumberFormatter.formatDouble(data.getDouble("HydroangeasDecayTime"))
+                            "tooltip.mana_jade.endoflame_burn_time",
+                            NumberFormatter.formatDouble(data.getDouble("EndoflameBurnTime"))
                     )
             );
         }
@@ -42,19 +42,19 @@ public enum HydroangeasComponentProvider implements IBlockComponentProvider, ISe
     public void appendServerData(CompoundTag data, BlockAccessor accessor) {
         //每秒魔力产出
         data.putDouble(
-                "HydroangeasManaPerSecond",
-                FluidGeneratorCalc.getFluidGeneratorManaPerSecond(accessor)
+                "EndoflameManaPerSecond",
+                EndoflameCalc.getEndoflameManaPerSecond(accessor)
         );
 
-        //枯萎时间
+        //燃烧时间
         data.putDouble(
-                "HydroangeasDecayTime",
-                FluidGeneratorCalc.getHydroangeasDecayTime(accessor)
+                "EndoflameBurnTime",
+                EndoflameCalc.getEndoflameBurnTime(accessor)
         );
     }
 
     @Override
     public ResourceLocation getUid() {
-        return BotaniaPlugin.HYDROANGEAS_INFO;
+        return BotaniaPlugin.ENDOFLAME_INFO;
     }
 }

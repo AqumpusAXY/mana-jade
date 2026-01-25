@@ -1,9 +1,9 @@
 package github.aqumpusaxy.mana_jade.plugin;
 
 import github.aqumpusaxy.mana_jade.ManaJade;
-import github.aqumpusaxy.mana_jade.plugin.flower.ManaStarComponentProvider;
-import github.aqumpusaxy.mana_jade.plugin.flower.PureDaisyComponentProvider;
-import github.aqumpusaxy.mana_jade.plugin.flower.generating.*;
+import github.aqumpusaxy.mana_jade.plugin.flora.misc.ManaStarComponentProvider;
+import github.aqumpusaxy.mana_jade.plugin.flora.misc.PureDaisyComponentProvider;
+import github.aqumpusaxy.mana_jade.plugin.flora.generating.*;
 import github.aqumpusaxy.mana_jade.plugin.machine.ManaPoolCatalystComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.machine.ManaSpreaderBurstComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.machine.RunicAltarComponentProvider;
@@ -34,9 +34,6 @@ import vazkii.botania.common.block.mana.TerrestrialAgglomerationPlateBlock;
 @WailaPlugin
 public class BotaniaPlugin implements IWailaPlugin {
     //TODO: 字段全部拆到Identifier类里
-    public static final ResourceLocation SPECIAL_FLORA_INFO =
-            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "special_flora_info");
-
     public static final ResourceLocation MANA_POOL_STORAGE =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "mana_pool_storage");
     public static final ResourceLocation MANA_SPREADER_STORAGE =
@@ -52,11 +49,6 @@ public class BotaniaPlugin implements IWailaPlugin {
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "runic_altar_recipe_progress");
     public static final ResourceLocation TERRA_PLATE_RECIPE_PROGRESS =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "terra_plate_recipe_progress");
-
-    public static final ResourceLocation PURE_DAISY_RECIPE_PROGRESS =
-            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "pure_daisy_recipe_progress");
-    public static final ResourceLocation MANA_STAR_INFO =
-            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "mana_star_info");
 
     public static final ResourceLocation HYDROANGEAS_INFO =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "hydroangeas_info");
@@ -98,7 +90,7 @@ public class BotaniaPlugin implements IWailaPlugin {
     @Override
     public void registerClient(IWailaClientRegistration registration) {
         //TODO: 添加分类的配置项
-        registration.addConfig(SPECIAL_FLORA_INFO, true);
+        registration.addConfig(Identifiers.MISC_FLORA_INFO, true);
 
         //TODO: 同类的Component抽成单个private方法
         registration.registerBlockComponent(ManaPoolComponentProvider.INSTANCE, ManaPoolBlock.class);
