@@ -1,6 +1,7 @@
 package github.aqumpusaxy.mana_jade.plugin.flora.generating;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
+import github.aqumpusaxy.mana_jade.plugin.Identifiers;
 import github.aqumpusaxy.mana_jade.util.NumberFormatter;
 import github.aqumpusaxy.mana_jade.util.calc.flora.generating.MunchdewCalc;
 import net.minecraft.nbt.CompoundTag;
@@ -17,6 +18,8 @@ public enum MunchdewComponentProvider implements IBlockComponentProvider, IServe
 
     @Override
     public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
+        if (!config.get(Identifiers.GENERATING_FLORA_INFO)) return;
+
         CompoundTag data = accessor.getServerData();
 
         if (data.contains("MunchdewManaPerLeaf")) {
@@ -72,6 +75,6 @@ public enum MunchdewComponentProvider implements IBlockComponentProvider, IServe
 
     @Override
     public ResourceLocation getUid() {
-        return BotaniaPlugin.MUNCHDEW_INFO;
+        return Identifiers.MUNCHDEW_INFO;
     }
 }

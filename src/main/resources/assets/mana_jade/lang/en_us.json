@@ -1,5 +1,6 @@
 {
   "config.jade.plugin_mana_jade.misc_flora_info": "Misc Flora Info",
+  "config.jade.plugin_mana_jade.generating_flora_info": "Generating Flora Info",
 
   "config.jade.plugin_mana_jade.mana_pool_storage": "Mana Pool Storage",
   "config.jade.plugin_mana_jade.mana_spreader_storage": "Mana Spreader Storage",
@@ -13,12 +14,12 @@
   "config.jade.plugin_mana_jade.misc_flora_info.pure_daisy_info": "Pure Daisy Info",
   "config.jade.plugin_mana_jade.misc_flora_info.mana_star_info": "Mana Star Info",
 
-  "config.jade.plugin_mana_jade.hydroangeas_info": "Hydroangeas Info",
-  "config.jade.plugin_mana_jade.endoflame_info": "Endoflame Info",
-  "config.jade.plugin_mana_jade.thermalily_info": "Thermalily Info",
-  "config.jade.plugin_mana_jade.rosa_arcana_info": "Rosa Arcana Info",
-  "config.jade.plugin_mana_jade.munchdew_info": "Munchdew Info",
-  "config.jade.plugin_mana_jade.entropinnyum_info": "Entropinnyum Info",
+  "config.jade.plugin_mana_jade.generating_flora_info.hydroangeas_info": "Hydroangeas Info",
+  "config.jade.plugin_mana_jade.generating_flora_info.endoflame_info": "Endoflame Info",
+  "config.jade.plugin_mana_jade.generating_flora_info.thermalily_info": "Thermalily Info",
+  "config.jade.plugin_mana_jade.generating_flora_info.rosa_arcana_info": "Rosa Arcana Info",
+  "config.jade.plugin_mana_jade.generating_flora_info.munchdew_info": "Munchdew Info",
+  "config.jade.plugin_mana_jade.generating_flora_info.entropinnyum_info": "Entropinnyum Info",
 
   "tooltip.mana_jade.mana_receiver_storage": "Mana: %d/%d",
   "tooltip.mana_jade.creative_mana_pool_storage": "Mana: ∞",

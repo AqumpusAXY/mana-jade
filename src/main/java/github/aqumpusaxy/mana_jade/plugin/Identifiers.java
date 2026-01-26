@@ -6,12 +6,26 @@ import net.minecraft.resources.ResourceLocation;
 public class Identifiers {
     public static final ResourceLocation MISC_FLORA_INFO =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "misc_flora_info");
+    public static final ResourceLocation GENERATING_FLORA_INFO =
+            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "generating_flora_info");
 
     //杂项花
-    public static final ResourceLocation PURE_DAISY_INFO = FloraIdentifier("pure_daisy_info");
-    public static final ResourceLocation MANA_STAR_INFO = FloraIdentifier("mana_star_info");
+    public static final ResourceLocation PURE_DAISY_INFO = MiscFloraIdentifier("pure_daisy_info");
+    public static final ResourceLocation MANA_STAR_INFO = MiscFloraIdentifier("mana_star_info");
 
-    private static ResourceLocation FloraIdentifier(String name) {
+    //产能花
+    public static final ResourceLocation HYDROANGEAS_INFO = GeneratingFloraIdentifier("hydroangeas_info");
+    public static final ResourceLocation ENDOFLAME_INFO = GeneratingFloraIdentifier("endoflame_info");
+    public static final ResourceLocation THERMALILY_INFO = GeneratingFloraIdentifier("thermalily_info");
+    public static final ResourceLocation ROSA_ARCANA_INFO = GeneratingFloraIdentifier("rosa_arcana_info");
+    public static final ResourceLocation MUNCHDEW_INFO = GeneratingFloraIdentifier("munchdew_info");
+    public static final ResourceLocation ENTROPINNYUM_INFO = GeneratingFloraIdentifier("entropinnyum_info");
+
+    private static ResourceLocation MiscFloraIdentifier(String name) {
         return ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "misc_flora_info." + name);
+    }
+
+    private static ResourceLocation GeneratingFloraIdentifier(String name) {
+        return ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "generating_flora_info." + name);
     }
 }

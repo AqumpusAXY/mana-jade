@@ -1,6 +1,7 @@
 package github.aqumpusaxy.mana_jade.plugin.flora.generating;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
+import github.aqumpusaxy.mana_jade.plugin.Identifiers;
 import github.aqumpusaxy.mana_jade.util.calc.flora.generating.RosaArcanaCalc;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -16,6 +17,8 @@ public enum RosaArcanaComponentProvider implements IBlockComponentProvider, ISer
     //TODO: 该Provider改为纯客户端功能
     @Override
     public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
+        if (!config.get(Identifiers.GENERATING_FLORA_INFO)) return;
+
         CompoundTag data = accessor.getServerData();
 
         if (data.contains("RosaArcanaManaPerXp")) {
@@ -54,6 +57,6 @@ public enum RosaArcanaComponentProvider implements IBlockComponentProvider, ISer
 
     @Override
     public ResourceLocation getUid() {
-        return BotaniaPlugin.ROSA_ARCANA_INFO;
+        return Identifiers.ROSA_ARCANA_INFO;
     }
 }

@@ -50,19 +50,6 @@ public class BotaniaPlugin implements IWailaPlugin {
     public static final ResourceLocation TERRA_PLATE_RECIPE_PROGRESS =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "terra_plate_recipe_progress");
 
-    public static final ResourceLocation HYDROANGEAS_INFO =
-            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "hydroangeas_info");
-    public static final ResourceLocation ENDOFLAME_INFO =
-            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "endoflame_info");
-    public static final ResourceLocation THERMALILY_INFO =
-            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "thermalily_info");
-    public static final ResourceLocation ROSA_ARCANA_INFO =
-            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "rosa_arcana_info");
-    public static final ResourceLocation MUNCHDEW_INFO =
-            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "munchdew_info");
-    public static final ResourceLocation ENTROPINNYUM_INFO =
-            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "entropinnyum_info");
-
     public static final ResourceLocation[] CLIENT_FEATURES = {
             MANA_POOL_CATALYST
     };
@@ -91,6 +78,7 @@ public class BotaniaPlugin implements IWailaPlugin {
     public void registerClient(IWailaClientRegistration registration) {
         //TODO: 添加分类的配置项
         registration.addConfig(Identifiers.MISC_FLORA_INFO, true);
+        registration.addConfig(Identifiers.GENERATING_FLORA_INFO, true);
 
         //TODO: 同类的Component抽成单个private方法
         registration.registerBlockComponent(ManaPoolComponentProvider.INSTANCE, ManaPoolBlock.class);

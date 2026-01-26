@@ -1,6 +1,7 @@
 package github.aqumpusaxy.mana_jade.plugin.flora.generating;
 
 import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
+import github.aqumpusaxy.mana_jade.plugin.Identifiers;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -16,6 +17,8 @@ public enum EntropinnyumComponentProvider implements IBlockComponentProvider {
 
     @Override
     public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
+        if (!config.get(Identifiers.GENERATING_FLORA_INFO)) return;
+
         CompoundTag data = accessor.getServerData();
         BlockEntity blockEntity = accessor.getBlockEntity();
 
@@ -39,6 +42,6 @@ public enum EntropinnyumComponentProvider implements IBlockComponentProvider {
 
     @Override
     public ResourceLocation getUid() {
-        return BotaniaPlugin.ENTROPINNYUM_INFO;
+        return Identifiers.ENTROPINNYUM_INFO;
     }
 }
