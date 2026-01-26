@@ -1,6 +1,6 @@
 package github.aqumpusaxy.mana_jade.plugin.mana;
 
-import github.aqumpusaxy.mana_jade.plugin.BotaniaPlugin;
+import github.aqumpusaxy.mana_jade.plugin.Identifiers;
 import github.aqumpusaxy.mana_jade.util.ElementProvider;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
@@ -13,6 +13,8 @@ public enum ManaSpreaderComponentProvider implements IBlockComponentProvider, IS
 
     @Override
     public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
+        if (!config.get(Identifiers.MANA_STORAGE)) return;
+
         if (accessor.getServerData().contains("MaxMana") && accessor.getServerData().contains("CurrentMana")) {
             int mana = accessor.getServerData().getInt("CurrentMana");
             int maxMana = accessor.getServerData().getInt("MaxMana");
@@ -29,7 +31,7 @@ public enum ManaSpreaderComponentProvider implements IBlockComponentProvider, IS
 
     @Override
     public ResourceLocation getUid() {
-        return BotaniaPlugin.MANA_SPREADER_STORAGE;
+        return Identifiers.MANA_SPREADER_STORAGE;
     }
 
     @Override

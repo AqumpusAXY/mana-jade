@@ -1,10 +1,11 @@
 {
+  "config.jade.plugin_mana_jade.mana_storage": "Mana Storage",
   "config.jade.plugin_mana_jade.misc_flora_info": "Misc Flora Info",
   "config.jade.plugin_mana_jade.generating_flora_info": "Generating Flora Info",
 
-  "config.jade.plugin_mana_jade.mana_pool_storage": "Mana Pool Storage",
-  "config.jade.plugin_mana_jade.mana_spreader_storage": "Mana Spreader Storage",
-  "config.jade.plugin_mana_jade.special_flora_storage": "Flora Storage",
+  "config.jade.plugin_mana_jade.mana_storage.mana_pool": "Mana Pool Storage",
+  "config.jade.plugin_mana_jade.mana_storage.mana_spreader": "Mana Spreader Storage",
+  "config.jade.plugin_mana_jade.mana_storage.special_flora": "Flora Storage",
 
   "config.jade.plugin_mana_jade.mana_pool_catalyst": "Mana Pool Catalyst",
   "config.jade.plugin_mana_jade.mana_spreader_burst_info": "Mana Spreader Burst Info",

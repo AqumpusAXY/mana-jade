@@ -1,9 +1,9 @@
 package github.aqumpusaxy.mana_jade.plugin;
 
 import github.aqumpusaxy.mana_jade.ManaJade;
+import github.aqumpusaxy.mana_jade.plugin.flora.generating.*;
 import github.aqumpusaxy.mana_jade.plugin.flora.misc.ManaStarComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.flora.misc.PureDaisyComponentProvider;
-import github.aqumpusaxy.mana_jade.plugin.flora.generating.*;
 import github.aqumpusaxy.mana_jade.plugin.machine.ManaPoolCatalystComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.machine.ManaSpreaderBurstComponentProvider;
 import github.aqumpusaxy.mana_jade.plugin.machine.RunicAltarComponentProvider;
@@ -33,14 +33,6 @@ import vazkii.botania.common.block.mana.TerrestrialAgglomerationPlateBlock;
 
 @WailaPlugin
 public class BotaniaPlugin implements IWailaPlugin {
-    //TODO: 字段全部拆到Identifier类里
-    public static final ResourceLocation MANA_POOL_STORAGE =
-            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "mana_pool_storage");
-    public static final ResourceLocation MANA_SPREADER_STORAGE =
-            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "mana_spreader_storage");
-    public static final ResourceLocation SPECIAL_FLORA_STORAGE =
-            ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "special_flora_storage");
-
     public static final ResourceLocation MANA_POOL_CATALYST =
             ResourceLocation.fromNamespaceAndPath(ManaJade.MODID, "mana_pool_catalyst");
     public static final ResourceLocation MANA_SPREADER_BURST_INFO =
@@ -77,6 +69,8 @@ public class BotaniaPlugin implements IWailaPlugin {
     @Override
     public void registerClient(IWailaClientRegistration registration) {
         //TODO: 添加分类的配置项
+        registration.addConfig(Identifiers.MANA_STORAGE, true);
+
         registration.addConfig(Identifiers.MISC_FLORA_INFO, true);
         registration.addConfig(Identifiers.GENERATING_FLORA_INFO, true);
 

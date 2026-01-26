@@ -1,10 +1,11 @@
 {
+  "config.jade.plugin_mana_jade.mana_storage": "魔力存储",
   "config.jade.plugin_mana_jade.misc_flora_info": "杂项花信息",
   "config.jade.plugin_mana_jade.generating_flora_info": "产能花信息",
 
-  "config.jade.plugin_mana_jade.mana_pool_storage": "魔力池魔力存储",
-  "config.jade.plugin_mana_jade.mana_spreader_storage": "魔力发射器魔力存储",
-  "config.jade.plugin_mana_jade.special_flora_storage": "花魔力存储",
+  "config.jade.plugin_mana_jade.mana_storage.mana_pool": "魔力池魔力存储",
+  "config.jade.plugin_mana_jade.mana_storage.mana_spreader": "魔力发射器魔力存储",
+  "config.jade.plugin_mana_jade.mana_storage.special_flora": "花魔力存储",
 
   "config.jade.plugin_mana_jade.mana_pool_catalyst": "魔力池催化器",
   "config.jade.plugin_mana_jade.mana_spreader_burst_info": "魔力发射器脉冲信息",
