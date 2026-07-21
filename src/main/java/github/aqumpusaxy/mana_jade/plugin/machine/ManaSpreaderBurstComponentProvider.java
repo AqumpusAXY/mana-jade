@@ -26,9 +26,7 @@ public enum ManaSpreaderBurstComponentProvider implements IBlockComponentProvide
             ));
 
             tooltip.add(Component.translatable("tooltip.mana_jade.mana_spreader_burst_velocity",
-                    DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(accessor.getServerData().getDouble("BurstVelocityX")),
-                    DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(accessor.getServerData().getDouble("BurstVelocityY")),
-                    DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(accessor.getServerData().getDouble("BurstVelocityZ"))
+                    DecimalFormatUtil.TWO_DECIMAL_FORMAT.format(accessor.getServerData().getDouble("BurstVelocity"))
             ));
 
             tooltip.add(Component.translatable("tooltip.mana_jade.mana_spreader_burst_ticks_before_mana_loss",
@@ -48,10 +46,8 @@ public enum ManaSpreaderBurstComponentProvider implements IBlockComponentProvide
 
         data.putInt("BurstStartingMana", burst.getStartingMana());
 
-        Vec3 BurstVelocity = burst.getDeltaMovement();
-        data.putDouble("BurstVelocityX", BurstVelocity.x);
-        data.putDouble("BurstVelocityY", BurstVelocity.y);
-        data.putDouble("BurstVelocityZ", BurstVelocity.z);
+        Vec3 burstVelocity = burst.getDeltaMovement();
+        data.putDouble("BurstVelocity", burstVelocity.length());
 
         data.putFloat("BurstManaLossPerTick", burst.getManaLossPerTick());
         data.putInt("BurstTicksBeforeManaLoss", burst.getMinManaLoss());
